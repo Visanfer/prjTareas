@@ -242,6 +242,7 @@ Partial Class frmBusTareas
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.panCampos)
         Me.Controls.Add(Me.lblTeclas)
+        Me.KeyPreview = True
         Me.Name = "frmBusTareas"
         Me.Text = "frmBusTareas"
         Me.panCampos.ResumeLayout(False)

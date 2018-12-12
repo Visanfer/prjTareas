@@ -38,13 +38,9 @@ Partial Class frmTarea
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -52,9 +48,13 @@ Partial Class frmTarea
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblMensaje
@@ -187,24 +187,6 @@ Partial Class frmTarea
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "ENCARGADO"
         '
-        'TextBox3
-        '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(166, 75)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(311, 20)
-        Me.TextBox3.TabIndex = 51
-        '
-        'TextBox4
-        '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(166, 101)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 53
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -223,15 +205,6 @@ Partial Class frmTarea
         Me.Label6.TabIndex = 54
         Me.Label6.Text = "FECHA PREVISTA FINAL"
         '
-        'TextBox6
-        '
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(166, 153)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 57
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -240,15 +213,6 @@ Partial Class frmTarea
         Me.Label7.Size = New System.Drawing.Size(77, 13)
         Me.Label7.TabIndex = 56
         Me.Label7.Text = "FECHA INICIO"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(166, 179)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 59
         '
         'Label8
         '
@@ -281,7 +245,7 @@ Partial Class frmTarea
         'Button1
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(477, 75)
+        Me.Button1.Location = New System.Drawing.Point(477, 74)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(27, 20)
         Me.Button1.TabIndex = 62
@@ -290,7 +254,7 @@ Partial Class frmTarea
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(828, 147)
+        Me.Button2.Location = New System.Drawing.Point(828, 128)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(181, 23)
         Me.Button2.TabIndex = 63
@@ -299,7 +263,7 @@ Partial Class frmTarea
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(828, 174)
+        Me.Button3.Location = New System.Drawing.Point(828, 155)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(181, 23)
         Me.Button3.TabIndex = 64
@@ -308,21 +272,12 @@ Partial Class frmTarea
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(828, 120)
+        Me.Button4.Location = New System.Drawing.Point(828, 101)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(181, 23)
         Me.Button4.TabIndex = 65
         Me.Button4.Text = "CREAR SUBTAREA"
         Me.Button4.UseVisualStyleBackColor = True
-        '
-        'TextBox8
-        '
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(166, 49)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(311, 20)
-        Me.TextBox8.TabIndex = 67
         '
         'Label10
         '
@@ -341,13 +296,67 @@ Partial Class frmTarea
         Me.DateTimePicker1.Size = New System.Drawing.Size(100, 20)
         Me.DateTimePicker1.TabIndex = 68
         '
+        'Label11
+        '
+        Me.Label11.BackColor = System.Drawing.Color.White
+        Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label11.Location = New System.Drawing.Point(166, 178)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(100, 20)
+        Me.Label11.TabIndex = 69
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label12
+        '
+        Me.Label12.BackColor = System.Drawing.Color.White
+        Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label12.Location = New System.Drawing.Point(166, 152)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(100, 20)
+        Me.Label12.TabIndex = 70
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label13
+        '
+        Me.Label13.BackColor = System.Drawing.Color.White
+        Me.Label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label13.Location = New System.Drawing.Point(166, 100)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(100, 20)
+        Me.Label13.TabIndex = 71
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label14
+        '
+        Me.Label14.BackColor = System.Drawing.Color.White
+        Me.Label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label14.Location = New System.Drawing.Point(166, 74)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(311, 20)
+        Me.Label14.TabIndex = 72
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.White
+        Me.Label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label15.Location = New System.Drawing.Point(166, 48)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(311, 20)
+        Me.Label15.TabIndex = 73
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'frmTarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1021, 802)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -355,14 +364,10 @@ Partial Class frmTarea
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label3)
@@ -372,6 +377,7 @@ Partial Class frmTarea
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.Label1)
+        Me.KeyPreview = True
         Me.Name = "frmTarea"
         Me.Text = "frmTarea"
         Me.ResumeLayout(False)
@@ -395,13 +401,9 @@ Partial Class frmTarea
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents ComboBox1 As ComboBox
@@ -409,7 +411,11 @@ Partial Class frmTarea
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents TextBox8 As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
 End Class
