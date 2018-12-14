@@ -1,7 +1,6 @@
 ﻿Option Explicit On
 
 Imports prjControl
-Imports MySql.Data.MySqlClient
 
 Public Class clsTarea
 
@@ -9,6 +8,7 @@ Public Class clsTarea
     Public mdFecha_Creacion As Date = Now
     Public msTitulo As String = ""
     Public mdFecha_Inicio_Prevista As Date = CDate("01/01/2000 00:00:00")
+    ' poner el resto de campos en el orden correspondiente
 
     Public mbEsNuevo As Boolean = True
 
@@ -35,6 +35,7 @@ Public Class clsTarea
         mnId_Tarea = CInt(loRecord("id_tarea") & "")
         mdFecha_Creacion = CDate(loRecord("fecha_creacion") & "")
         msTitulo = Trim(loRecord("titulo") & "")
+        ' poner el resto de campos en el orden correspondiente
     End Sub
 
     Public Sub mrGrabaDatos()
@@ -43,12 +44,14 @@ Public Class clsTarea
         Dim loBaseDatos As New clsBaseDatos
 
         If mbEsNuevo Then
+            ' poner el resto de campos en el orden correspondiente
             lsSql = "insert into tareas(campos,...) values ('" &
                         Format(mdFecha_Creacion, formatoFechahora) & "','" &
                         msTitulo & "'," &
                         mnId_Tarea & "); SELECT LAST_INSERT_ID();"
             mnId_Tarea = loBaseDatos.mrEjecutaComandoAI(False, lsSql)
         Else
+            ' poner el resto de campos en el orden correspondiente
             lsSql = "update tareas set titulo = '" & msTitulo &
                     "', fecha_inicio_prevista = '" & Format(mdFecha_Inicio_Prevista, formatoFechahora) &
                     "' where id_tarea = " & mnId_Tarea
