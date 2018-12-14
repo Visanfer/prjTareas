@@ -1,5 +1,6 @@
 ﻿Option Explicit On
 
+Imports prjControl
 Imports MySql.Data.MySqlClient
 
 Public Class clsTarea
@@ -17,7 +18,7 @@ Public Class clsTarea
 
     Public Sub mrRecuperaDatos()
 
-        Dim lsSql As String = "select * from flota_posicion where idposicion = " & mnIdPosicion
+        Dim lsSql As String = "select * from tareas where id_tarea = " & mnId_Tarea
         moDatos = New clsControlBD().mfoRecuperaDatos(False, lsSql, "posicion")
 
         mbEsNuevo = True
@@ -29,9 +30,9 @@ Public Class clsTarea
     End Sub
 
     Public Sub mrCargaDatos(ByVal loRecord As DataRow)
-        mnIdPosicion = CInt(loRecord("idposicion") & "")
-        msImei = Trim(loRecord("imei") & "")
-        mdFechaHora = CDate(loRecord("fechahora") & "")
+        mnId_Tarea = CInt(loRecord("id_tarea") & "")
+        mdFecha_Creacion = CDate(loRecord("fecha_creacion") & "")
+        msTitulo = Trim(loRecord("titulo") & "")
     End Sub
 
     Public Sub mrGrabaDatos()
@@ -43,25 +44,16 @@ Public Class clsTarea
         If lconConexion.State = ConnectionState.Closed Then Exit Sub
 
         If mbEsNuevo Then
-            lsSql = "insert into flota_posicion(imei,idusuario,idvehiculo,fechahora,latitud,longitud,velocidad) values ('" &
-                        msImei & "'," &
-                        mnIdUsuario & "," &
-                        mnIdVehiculo & ",'" &
-                        Format(mdFechaHora, "yyyy/MM/dd HH:mm:ss") & "'," &
-                        mnLatitud & "," &
-                        mnLongitud & "," &
-                        mnVelocidad & "); SELECT LAST_INSERT_ID();"
+            lsSql = "insert into tareas(campos,...) values ('" &
+                        Format(mdFecha_Creacion, formatoFecha) & "','" &
+                        msTitulo & "'," &
+                        mnId_Tarea & "); SELECT LAST_INSERT_ID();"
             loComando = New MySqlCommand(lsSql, lconConexion)
-            mnIdPosicion = Convert.ToInt64(loComando.ExecuteScalar())
+            mnId_Tarea = Convert.ToInt64(loComando.ExecuteScalar())
         Else
-            lsSql = "update flota_posicion set imei = '" & msImei &
-                    "', idusuario = " & mnIdUsuario &
-                    ", idvehiculo = " & mnIdVehiculo &
-                    ", fechahora = '" & Format(mdFechaHora, "yyyy/MM/dd HH:mm:ss") &
-                    "', latitud = " & mnLatitud &
-                    ", longitud = " & mnLongitud &
-                    ", velocidad = " & mnVelocidad &
-                    " where idposicion = " & mnIdPosicion
+            lsSql = "update tareas set titulo = '" & msTitulo &
+                    "', fecha_inicio_prevista = '" & Format(mdFecha_Inicio_Prevista, formatoFecha) &
+                    "' where id_tarea = " & mnId_Tarea
             loComando = New MySqlCommand(lsSql, lconConexion)
             loComando.ExecuteNonQuery()
         End If
@@ -79,7 +71,7 @@ Public Class clsTarea
         Dim lsSql As String
         Dim loComando As New MySqlCommand()
 
-        lsSql = "delete from flota_posiciontemp where idposicion = " & lnIndice
+        lsSql = "delete from tareas where id_tarea = " & mnId_Tarea
 
         loComando = New MySqlCommand(lsSql, lconConexion)
         loComando.ExecuteNonQuery()

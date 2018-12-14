@@ -54,6 +54,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\dll\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="prjControl, Version=4.0.6836.22024, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\prjControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
