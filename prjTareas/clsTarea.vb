@@ -19,10 +19,12 @@ Public Class clsTarea
     Public Sub mrRecuperaDatos()
 
         Dim lsSql As String = "select * from tareas where id_tarea = " & mnId_Tarea
-        moDatos = New clsControlBD().mfoRecuperaDatos(False, lsSql, "posicion")
+
+        Dim loBaseDatos As New clsBaseDatos
+        Dim loDatos As DataTable = loBaseDatos.mfoRecuperaDatos(False, lsSql, "tarea")
 
         mbEsNuevo = True
-        For Each loRow As DataRow In moDatos.Rows
+        For Each loRow As DataRow In loDatos.Rows
             mrCargaDatos(loRow)
             mbEsNuevo = False
         Next
@@ -38,26 +40,20 @@ Public Class clsTarea
     Public Sub mrGrabaDatos()
 
         Dim lsSql As String
-        Dim loComando As New MySqlCommand
-
-        Dim lconConexion As MySqlConnection = mfconConexionSQL(False)
-        If lconConexion.State = ConnectionState.Closed Then Exit Sub
+        Dim loBaseDatos As New clsBaseDatos
 
         If mbEsNuevo Then
             lsSql = "insert into tareas(campos,...) values ('" &
-                        Format(mdFecha_Creacion, formatoFecha) & "','" &
+                        Format(mdFecha_Creacion, formatoFechahora) & "','" &
                         msTitulo & "'," &
                         mnId_Tarea & "); SELECT LAST_INSERT_ID();"
-            loComando = New MySqlCommand(lsSql, lconConexion)
-            mnId_Tarea = Convert.ToInt64(loComando.ExecuteScalar())
+            mnId_Tarea = loBaseDatos.mrEjecutaComandoAI(False, lsSql)
         Else
             lsSql = "update tareas set titulo = '" & msTitulo &
-                    "', fecha_inicio_prevista = '" & Format(mdFecha_Inicio_Prevista, formatoFecha) &
+                    "', fecha_inicio_prevista = '" & Format(mdFecha_Inicio_Prevista, formatoFechahora) &
                     "' where id_tarea = " & mnId_Tarea
-            loComando = New MySqlCommand(lsSql, lconConexion)
-            loComando.ExecuteNonQuery()
+            loBaseDatos.mrEjecutaComando(False, lsSql)
         End If
-        lconConexion.Close()
 
         mbEsNuevo = False
 
@@ -65,17 +61,9 @@ Public Class clsTarea
 
     Public Sub mrBorraDatos()
 
-        Dim lconConexion As MySqlConnection = prjControl.mfconConexionSQL(False)
-        If lconConexion.State = ConnectionState.Closed Then Exit Sub
-
-        Dim lsSql As String
-        Dim loComando As New MySqlCommand()
-
-        lsSql = "delete from tareas where id_tarea = " & mnId_Tarea
-
-        loComando = New MySqlCommand(lsSql, lconConexion)
-        loComando.ExecuteNonQuery()
-        lconConexion.Close()
+        Dim lsSql As String = "delete from tareas where id_tarea = " & mnId_Tarea
+        Dim loBaseDatos As New clsBaseDatos
+        loBaseDatos.mrEjecutaComando(False, lsSql)
 
     End Sub
 

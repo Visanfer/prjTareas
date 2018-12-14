@@ -98,6 +98,12 @@
     <Compile Include="frmComentario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmEstados.Designer.vb">
+      <DependentUpon>frmEstados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTarea.Designer.vb">
       <DependentUpon>frmTarea.vb</DependentUpon>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmComentario.resx">
       <DependentUpon>frmComentario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstados.resx">
+      <DependentUpon>frmEstados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTarea.resx">
       <DependentUpon>frmTarea.vb</DependentUpon>
