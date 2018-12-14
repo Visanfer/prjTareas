@@ -1,7 +1,5 @@
 ﻿Option Explicit On
 
-Public Class clsTareaLog
-
-
+Public Class clsTareaEstado
 
 End Class
