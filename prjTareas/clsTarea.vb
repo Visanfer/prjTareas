@@ -10,7 +10,7 @@ Public Class clsTarea
     Public mnId_Responsable As Integer = 0
     Public msTitulo As String = ""
     Public msDescripcion As String = ""
-    Public msId_Estado As String = ""
+    Public mnId_Estado As Integer = 0
     Public mdFecha_Inicio_Prevista As Date = CDate("01/01/2000 00:00:00")
     Public mdFecha_Fin_Prevista As Date = CDate("01/01/2000 00:00:00")
     Public mdFecha_Inicio As Date = CDate("01/01/2000 00:00:00")
@@ -75,7 +75,7 @@ Public Class clsTarea
                         Format(mdFecha_Fin_Prevista, formatoFechahora) & "','" &
                         Format(mdFecha_Inicio, formatoFechahora) & "','" &
                         Format(mdFecha_Fin, formatoFechahora) & "','" &
-                        mnId_Tarea_Padre & "); SELECT LAST_INSERT_ID();"
+                        mnId_Tarea_Padre & "'); SELECT LAST_INSERT_ID();"
             mnId_Tarea = loBaseDatos.mrEjecutaComandoAI(False, lsSql)
         Else
             ' poner el resto de campos en el orden correspondiente (HECHO)
