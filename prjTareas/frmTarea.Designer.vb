@@ -58,7 +58,7 @@ Partial Class frmTarea
         Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.Location = New System.Drawing.Point(12, 9)
         Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(997, 32)
+        Me.lblMensaje.Size = New System.Drawing.Size(984, 32)
         Me.lblMensaje.TabIndex = 42
         Me.lblMensaje.Text = "MANTENIMIENTO DE TAREAS"
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -68,9 +68,9 @@ Partial Class frmTarea
         Me.lblTeclas.BackColor = System.Drawing.Color.Silver
         Me.lblTeclas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblTeclas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTeclas.Location = New System.Drawing.Point(12, 765)
+        Me.lblTeclas.Location = New System.Drawing.Point(12, 693)
         Me.lblTeclas.Name = "lblTeclas"
-        Me.lblTeclas.Size = New System.Drawing.Size(997, 28)
+        Me.lblTeclas.Size = New System.Drawing.Size(984, 28)
         Me.lblTeclas.TabIndex = 43
         Me.lblTeclas.Text = "F5 - GRABAR CAMBIOS                      ESC - SALIR"
         Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -86,7 +86,7 @@ Partial Class frmTarea
         Me.lstLog.Location = New System.Drawing.Point(12, 455)
         Me.lstLog.MultiSelect = False
         Me.lstLog.Name = "lstLog"
-        Me.lstLog.Size = New System.Drawing.Size(997, 307)
+        Me.lstLog.Size = New System.Drawing.Size(984, 235)
         Me.lstLog.TabIndex = 44
         Me.lstLog.UseCompatibleStateImageBehavior = False
         Me.lstLog.View = System.Windows.Forms.View.Details
@@ -113,7 +113,7 @@ Partial Class frmTarea
         Me.LblHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblHistorial.Location = New System.Drawing.Point(12, 428)
         Me.LblHistorial.Name = "LblHistorial"
-        Me.LblHistorial.Size = New System.Drawing.Size(997, 34)
+        Me.LblHistorial.Size = New System.Drawing.Size(984, 34)
         Me.LblHistorial.TabIndex = 45
         Me.LblHistorial.Text = "HISTORIAL"
         Me.LblHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -131,7 +131,7 @@ Partial Class frmTarea
         '
         Me.txtTitulo.Location = New System.Drawing.Point(64, 214)
         Me.txtTitulo.Name = "txtTitulo"
-        Me.txtTitulo.Size = New System.Drawing.Size(945, 20)
+        Me.txtTitulo.Size = New System.Drawing.Size(932, 20)
         Me.txtTitulo.TabIndex = 47
         '
         'LblDescripcion
@@ -148,7 +148,7 @@ Partial Class frmTarea
         Me.txtDescripcion.Location = New System.Drawing.Point(12, 269)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(997, 156)
+        Me.txtDescripcion.Size = New System.Drawing.Size(984, 156)
         Me.txtDescripcion.TabIndex = 49
         '
         'LblEncargado
@@ -203,7 +203,7 @@ Partial Class frmTarea
         Me.cboEstado.Items.AddRange(New Object() {"PENDIENTE DE ACEPTAR", "ACEPTADA", "COMENZADA", "TERMINADA", "RECHAZADA"})
         Me.cboEstado.Location = New System.Drawing.Point(706, 48)
         Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(303, 21)
+        Me.cboEstado.Size = New System.Drawing.Size(290, 21)
         Me.cboEstado.TabIndex = 61
         '
         'btnF9
@@ -218,7 +218,7 @@ Partial Class frmTarea
         '
         'BtnAsignarOtro
         '
-        Me.BtnAsignarOtro.Location = New System.Drawing.Point(765, 128)
+        Me.BtnAsignarOtro.Location = New System.Drawing.Point(752, 125)
         Me.BtnAsignarOtro.Name = "BtnAsignarOtro"
         Me.BtnAsignarOtro.Size = New System.Drawing.Size(244, 23)
         Me.BtnAsignarOtro.TabIndex = 63
@@ -227,7 +227,7 @@ Partial Class frmTarea
         '
         'BtnAñadirComentario
         '
-        Me.BtnAñadirComentario.Location = New System.Drawing.Point(765, 155)
+        Me.BtnAñadirComentario.Location = New System.Drawing.Point(752, 152)
         Me.BtnAñadirComentario.Name = "BtnAñadirComentario"
         Me.BtnAñadirComentario.Size = New System.Drawing.Size(244, 23)
         Me.BtnAñadirComentario.TabIndex = 64
@@ -236,7 +236,7 @@ Partial Class frmTarea
         '
         'BtnCrearSubtarea
         '
-        Me.BtnCrearSubtarea.Location = New System.Drawing.Point(765, 101)
+        Me.BtnCrearSubtarea.Location = New System.Drawing.Point(752, 98)
         Me.BtnCrearSubtarea.Name = "BtnCrearSubtarea"
         Me.BtnCrearSubtarea.Size = New System.Drawing.Size(244, 23)
         Me.BtnCrearSubtarea.TabIndex = 65
@@ -306,7 +306,7 @@ Partial Class frmTarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1021, 802)
+        Me.ClientSize = New System.Drawing.Size(1008, 730)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblNombreSolicitante)
         Me.Controls.Add(Me.lblNombreResponsable)
@@ -332,9 +332,13 @@ Partial Class frmTarea
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.LblHistorial)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
+        Me.MaximumSize = New System.Drawing.Size(1024, 768)
+        Me.MinimumSize = New System.Drawing.Size(1024, 768)
         Me.Name = "frmTarea"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmTarea"
         Me.ResumeLayout(False)
