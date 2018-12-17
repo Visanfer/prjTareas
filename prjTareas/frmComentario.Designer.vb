@@ -43,6 +43,7 @@ Partial Class frmComentario
         'TxtComentario
         '
         Me.TxtComentario.Location = New System.Drawing.Point(12, 44)
+        Me.TxtComentario.MaxLength = 300
         Me.TxtComentario.Multiline = True
         Me.TxtComentario.Name = "TxtComentario"
         Me.TxtComentario.Size = New System.Drawing.Size(584, 156)
@@ -80,9 +81,13 @@ Partial Class frmComentario
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.TxtComentario)
         Me.Controls.Add(Me.lblMensaje)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
+        Me.MaximumSize = New System.Drawing.Size(624, 306)
+        Me.MinimumSize = New System.Drawing.Size(624, 306)
         Me.Name = "frmComentario"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmComentario"
         Me.ResumeLayout(False)
