@@ -40,4 +40,16 @@ Public Module modTareas
 
     End Function
 
+    Public Sub mrMandaVimail(ByVal lnDe As Integer, ByVal lnPara As Integer, ByVal lsMensaje As String)
+
+        Dim loVimail As New prjComunicacionInterna.clsVimail
+        loVimail.mnEmpresa = 1
+        loVimail.mnDe = lnDe
+        loVimail.mnPara = lnPara
+        loVimail.msAsunto = "NOTIFICACION TAREA"
+        loVimail.msCuerpo = lsMensaje
+        loVimail.mrGrabaDatos()
+
+    End Sub
+
 End Module

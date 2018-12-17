@@ -54,6 +54,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\dll\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="prjComunicacionInterna, Version=4.0.6635.17943, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\prjComunicacionInterna.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="prjControl, Version=4.0.6836.22024, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\dll\prjControl.dll</HintPath>
