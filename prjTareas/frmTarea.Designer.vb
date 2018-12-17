@@ -130,6 +130,7 @@ Partial Class frmTarea
         'txtTitulo
         '
         Me.txtTitulo.Location = New System.Drawing.Point(64, 214)
+        Me.txtTitulo.MaxLength = 100
         Me.txtTitulo.Name = "txtTitulo"
         Me.txtTitulo.Size = New System.Drawing.Size(932, 20)
         Me.txtTitulo.TabIndex = 47
@@ -146,6 +147,7 @@ Partial Class frmTarea
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(12, 269)
+        Me.txtDescripcion.MaxLength = 300
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(984, 156)
