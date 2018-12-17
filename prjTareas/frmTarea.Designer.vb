@@ -32,23 +32,23 @@ Partial Class frmTarea
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.LblHistorial = New System.Windows.Forms.Label()
+        Me.LblTitulo = New System.Windows.Forms.Label()
+        Me.TxtTitulo = New System.Windows.Forms.TextBox()
+        Me.LblDescripcion = New System.Windows.Forms.Label()
+        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
+        Me.LblEncargado = New System.Windows.Forms.Label()
+        Me.LblFechaCreacion = New System.Windows.Forms.Label()
+        Me.LblFechaPrevistaFinal = New System.Windows.Forms.Label()
+        Me.LblFechaInicio = New System.Windows.Forms.Label()
+        Me.LblFechaFinal = New System.Windows.Forms.Label()
+        Me.LblEstado = New System.Windows.Forms.Label()
+        Me.CboEstado = New System.Windows.Forms.ComboBox()
+        Me.BtnF9 = New System.Windows.Forms.Button()
+        Me.BtnAsignarOtro = New System.Windows.Forms.Button()
+        Me.BtnAñadirComentario = New System.Windows.Forms.Button()
+        Me.BtnCrearSubtarea = New System.Windows.Forms.Button()
+        Me.LblSolicitador = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -133,160 +133,160 @@ Partial Class frmTarea
         Me.ColumnHeader14.Text = "CON"
         Me.ColumnHeader14.Width = 40
         '
-        'Label1
+        'LblHistorial
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 428)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(997, 34)
-        Me.Label1.TabIndex = 45
-        Me.Label1.Text = "HISTORIAL"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblHistorial.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.LblHistorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHistorial.Location = New System.Drawing.Point(12, 428)
+        Me.LblHistorial.Name = "LblHistorial"
+        Me.LblHistorial.Size = New System.Drawing.Size(997, 34)
+        Me.LblHistorial.TabIndex = 45
+        Me.LblHistorial.Text = "HISTORIAL"
+        Me.LblHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label2
+        'LblTitulo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 218)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
-        Me.Label2.TabIndex = 46
-        Me.Label2.Text = "TITULO"
+        Me.LblTitulo.AutoSize = True
+        Me.LblTitulo.Location = New System.Drawing.Point(12, 218)
+        Me.LblTitulo.Name = "LblTitulo"
+        Me.LblTitulo.Size = New System.Drawing.Size(46, 13)
+        Me.LblTitulo.TabIndex = 46
+        Me.LblTitulo.Text = "TITULO"
         '
-        'TextBox1
+        'TxtTitulo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(64, 214)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(945, 20)
-        Me.TextBox1.TabIndex = 47
+        Me.TxtTitulo.Location = New System.Drawing.Point(64, 214)
+        Me.TxtTitulo.Name = "TxtTitulo"
+        Me.TxtTitulo.Size = New System.Drawing.Size(945, 20)
+        Me.TxtTitulo.TabIndex = 47
         '
-        'Label3
+        'LblDescripcion
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 253)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 13)
-        Me.Label3.TabIndex = 48
-        Me.Label3.Text = "DESCRIPCION"
+        Me.LblDescripcion.AutoSize = True
+        Me.LblDescripcion.Location = New System.Drawing.Point(12, 253)
+        Me.LblDescripcion.Name = "LblDescripcion"
+        Me.LblDescripcion.Size = New System.Drawing.Size(80, 13)
+        Me.LblDescripcion.TabIndex = 48
+        Me.LblDescripcion.Text = "DESCRIPCION"
         '
-        'TextBox2
+        'TxtDescripcion
         '
-        Me.TextBox2.Location = New System.Drawing.Point(12, 269)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(997, 156)
-        Me.TextBox2.TabIndex = 49
+        Me.TxtDescripcion.Location = New System.Drawing.Point(12, 269)
+        Me.TxtDescripcion.Multiline = True
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.Size = New System.Drawing.Size(997, 156)
+        Me.TxtDescripcion.TabIndex = 49
         '
-        'Label4
+        'LblEncargado
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 78)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 13)
-        Me.Label4.TabIndex = 50
-        Me.Label4.Text = "ENCARGADO"
+        Me.LblEncargado.AutoSize = True
+        Me.LblEncargado.Location = New System.Drawing.Point(12, 78)
+        Me.LblEncargado.Name = "LblEncargado"
+        Me.LblEncargado.Size = New System.Drawing.Size(75, 13)
+        Me.LblEncargado.TabIndex = 50
+        Me.LblEncargado.Text = "ENCARGADO"
         '
-        'Label5
+        'LblFechaCreacion
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 104)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 13)
-        Me.Label5.TabIndex = 52
-        Me.Label5.Text = "FECHA CREACION"
+        Me.LblFechaCreacion.AutoSize = True
+        Me.LblFechaCreacion.Location = New System.Drawing.Point(12, 104)
+        Me.LblFechaCreacion.Name = "LblFechaCreacion"
+        Me.LblFechaCreacion.Size = New System.Drawing.Size(100, 13)
+        Me.LblFechaCreacion.TabIndex = 52
+        Me.LblFechaCreacion.Text = "FECHA CREACION"
         '
-        'Label6
+        'LblFechaPrevistaFinal
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 130)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(131, 13)
-        Me.Label6.TabIndex = 54
-        Me.Label6.Text = "FECHA PREVISTA FINAL"
+        Me.LblFechaPrevistaFinal.AutoSize = True
+        Me.LblFechaPrevistaFinal.Location = New System.Drawing.Point(12, 130)
+        Me.LblFechaPrevistaFinal.Name = "LblFechaPrevistaFinal"
+        Me.LblFechaPrevistaFinal.Size = New System.Drawing.Size(131, 13)
+        Me.LblFechaPrevistaFinal.TabIndex = 54
+        Me.LblFechaPrevistaFinal.Text = "FECHA PREVISTA FINAL"
         '
-        'Label7
+        'LblFechaInicio
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 156)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(77, 13)
-        Me.Label7.TabIndex = 56
-        Me.Label7.Text = "FECHA INICIO"
+        Me.LblFechaInicio.AutoSize = True
+        Me.LblFechaInicio.Location = New System.Drawing.Point(12, 156)
+        Me.LblFechaInicio.Name = "LblFechaInicio"
+        Me.LblFechaInicio.Size = New System.Drawing.Size(77, 13)
+        Me.LblFechaInicio.TabIndex = 56
+        Me.LblFechaInicio.Text = "FECHA INICIO"
         '
-        'Label8
+        'LblFechaFinal
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 182)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(75, 13)
-        Me.Label8.TabIndex = 58
-        Me.Label8.Text = "FECHA FINAL"
+        Me.LblFechaFinal.AutoSize = True
+        Me.LblFechaFinal.Location = New System.Drawing.Point(12, 182)
+        Me.LblFechaFinal.Name = "LblFechaFinal"
+        Me.LblFechaFinal.Size = New System.Drawing.Size(75, 13)
+        Me.LblFechaFinal.TabIndex = 58
+        Me.LblFechaFinal.Text = "FECHA FINAL"
         '
-        'Label9
+        'LblEstado
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(649, 52)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(51, 13)
-        Me.Label9.TabIndex = 60
-        Me.Label9.Text = "ESTADO"
+        Me.LblEstado.AutoSize = True
+        Me.LblEstado.Location = New System.Drawing.Point(649, 52)
+        Me.LblEstado.Name = "LblEstado"
+        Me.LblEstado.Size = New System.Drawing.Size(51, 13)
+        Me.LblEstado.TabIndex = 60
+        Me.LblEstado.Text = "ESTADO"
         '
-        'ComboBox1
+        'CboEstado
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"PENDIENTE DE ACEPTAR", "ACEPTADA", "COMENZADA", "TERMINADA", "RECHAZADA"})
-        Me.ComboBox1.Location = New System.Drawing.Point(706, 48)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(303, 21)
-        Me.ComboBox1.TabIndex = 61
+        Me.CboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboEstado.FormattingEnabled = True
+        Me.CboEstado.Items.AddRange(New Object() {"PENDIENTE DE ACEPTAR", "ACEPTADA", "COMENZADA", "TERMINADA", "RECHAZADA"})
+        Me.CboEstado.Location = New System.Drawing.Point(706, 48)
+        Me.CboEstado.Name = "CboEstado"
+        Me.CboEstado.Size = New System.Drawing.Size(303, 21)
+        Me.CboEstado.TabIndex = 61
         '
-        'Button1
+        'BtnF9
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(477, 74)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(27, 20)
-        Me.Button1.TabIndex = 62
-        Me.Button1.Text = "F9"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnF9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnF9.Location = New System.Drawing.Point(477, 74)
+        Me.BtnF9.Name = "BtnF9"
+        Me.BtnF9.Size = New System.Drawing.Size(27, 20)
+        Me.BtnF9.TabIndex = 62
+        Me.BtnF9.Text = "F9"
+        Me.BtnF9.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnAsignarOtro
         '
-        Me.Button2.Location = New System.Drawing.Point(828, 128)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(181, 23)
-        Me.Button2.TabIndex = 63
-        Me.Button2.Text = "ASIGNAR TAREA A OTRO USUARIO"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnAsignarOtro.Location = New System.Drawing.Point(828, 128)
+        Me.BtnAsignarOtro.Name = "BtnAsignarOtro"
+        Me.BtnAsignarOtro.Size = New System.Drawing.Size(181, 23)
+        Me.BtnAsignarOtro.TabIndex = 63
+        Me.BtnAsignarOtro.Text = "ASIGNAR TAREA A OTRO USUARIO"
+        Me.BtnAsignarOtro.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnAñadirComentario
         '
-        Me.Button3.Location = New System.Drawing.Point(828, 155)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(181, 23)
-        Me.Button3.TabIndex = 64
-        Me.Button3.Text = "AÑADIR COMENTARIO"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnAñadirComentario.Location = New System.Drawing.Point(828, 155)
+        Me.BtnAñadirComentario.Name = "BtnAñadirComentario"
+        Me.BtnAñadirComentario.Size = New System.Drawing.Size(181, 23)
+        Me.BtnAñadirComentario.TabIndex = 64
+        Me.BtnAñadirComentario.Text = "AÑADIR COMENTARIO"
+        Me.BtnAñadirComentario.UseVisualStyleBackColor = True
         '
-        'Button4
+        'BtnCrearSubtarea
         '
-        Me.Button4.Location = New System.Drawing.Point(828, 101)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(181, 23)
-        Me.Button4.TabIndex = 65
-        Me.Button4.Text = "CREAR SUBTAREA"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BtnCrearSubtarea.Location = New System.Drawing.Point(828, 101)
+        Me.BtnCrearSubtarea.Name = "BtnCrearSubtarea"
+        Me.BtnCrearSubtarea.Size = New System.Drawing.Size(181, 23)
+        Me.BtnCrearSubtarea.TabIndex = 65
+        Me.BtnCrearSubtarea.Text = "CREAR SUBTAREA"
+        Me.BtnCrearSubtarea.UseVisualStyleBackColor = True
         '
-        'Label10
+        'LblSolicitador
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 52)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(79, 13)
-        Me.Label10.TabIndex = 66
-        Me.Label10.Text = "SOLICITADOR"
+        Me.LblSolicitador.AutoSize = True
+        Me.LblSolicitador.Location = New System.Drawing.Point(12, 52)
+        Me.LblSolicitador.Name = "LblSolicitador"
+        Me.LblSolicitador.Size = New System.Drawing.Size(79, 13)
+        Me.LblSolicitador.TabIndex = 66
+        Me.LblSolicitador.Text = "SOLICITADOR"
         '
         'DateTimePicker1
         '
@@ -351,34 +351,37 @@ Partial Class frmTarea
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1021, 802)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.LblSolicitador)
+        Me.Controls.Add(Me.BtnCrearSubtarea)
+        Me.Controls.Add(Me.BtnAñadirComentario)
+        Me.Controls.Add(Me.BtnAsignarOtro)
+        Me.Controls.Add(Me.BtnF9)
+        Me.Controls.Add(Me.CboEstado)
+        Me.Controls.Add(Me.LblEstado)
+        Me.Controls.Add(Me.LblFechaFinal)
+        Me.Controls.Add(Me.LblFechaInicio)
+        Me.Controls.Add(Me.LblFechaPrevistaFinal)
+        Me.Controls.Add(Me.LblFechaCreacion)
+        Me.Controls.Add(Me.LblEncargado)
+        Me.Controls.Add(Me.TxtDescripcion)
+        Me.Controls.Add(Me.LblDescripcion)
+        Me.Controls.Add(Me.TxtTitulo)
+        Me.Controls.Add(Me.LblTitulo)
         Me.Controls.Add(Me.lstEntrada)
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.lblMensaje)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LblHistorial)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.KeyPreview = True
         Me.Name = "frmTarea"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmTarea"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -395,23 +398,23 @@ Partial Class frmTarea
     Friend WithEvents ColumnHeader10 As ColumnHeader
     Friend WithEvents ColumnHeader12 As ColumnHeader
     Friend WithEvents ColumnHeader14 As ColumnHeader
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Label10 As Label
+    Friend WithEvents LblHistorial As Label
+    Friend WithEvents LblTitulo As Label
+    Friend WithEvents TxtTitulo As TextBox
+    Friend WithEvents LblDescripcion As Label
+    Friend WithEvents TxtDescripcion As TextBox
+    Friend WithEvents LblEncargado As Label
+    Friend WithEvents LblFechaCreacion As Label
+    Friend WithEvents LblFechaPrevistaFinal As Label
+    Friend WithEvents LblFechaInicio As Label
+    Friend WithEvents LblFechaFinal As Label
+    Friend WithEvents LblEstado As Label
+    Friend WithEvents CboEstado As ComboBox
+    Friend WithEvents BtnF9 As Button
+    Friend WithEvents BtnAsignarOtro As Button
+    Friend WithEvents BtnAñadirComentario As Button
+    Friend WithEvents BtnCrearSubtarea As Button
+    Friend WithEvents LblSolicitador As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label

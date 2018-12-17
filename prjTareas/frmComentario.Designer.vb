@@ -23,9 +23,9 @@ Partial Class frmComentario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lblMensaje = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TxtComentario = New System.Windows.Forms.TextBox()
         Me.lblTeclas = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckVimail = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'lblMensaje
@@ -40,13 +40,13 @@ Partial Class frmComentario
         Me.lblMensaje.Text = "AÑADIR COMENTARIO"
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox2
+        'TxtComentario
         '
-        Me.TextBox2.Location = New System.Drawing.Point(12, 44)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(584, 156)
-        Me.TextBox2.TabIndex = 50
+        Me.TxtComentario.Location = New System.Drawing.Point(12, 44)
+        Me.TxtComentario.Multiline = True
+        Me.TxtComentario.Name = "TxtComentario"
+        Me.TxtComentario.Size = New System.Drawing.Size(584, 156)
+        Me.TxtComentario.TabIndex = 50
         '
         'lblTeclas
         '
@@ -60,26 +60,30 @@ Partial Class frmComentario
         Me.lblTeclas.Text = "F5 - GRABAR                      ESC - SALIR"
         Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'CheckBox1
+        'CheckVimail
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(13, 207)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(288, 17)
-        Me.CheckBox1.TabIndex = 52
-        Me.CheckBox1.Text = "INFORMAR MEDIANTE UN VIMAIL AL SOLICITANTE"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CheckVimail.AutoSize = True
+        Me.CheckVimail.Location = New System.Drawing.Point(13, 207)
+        Me.CheckVimail.Name = "CheckVimail"
+        Me.CheckVimail.Size = New System.Drawing.Size(288, 17)
+        Me.CheckVimail.TabIndex = 52
+        Me.CheckVimail.Text = "INFORMAR MEDIANTE UN VIMAIL AL SOLICITANTE"
+        Me.CheckVimail.UseVisualStyleBackColor = True
         '
         'frmComentario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(608, 268)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.CheckVimail)
         Me.Controls.Add(Me.lblTeclas)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TxtComentario)
         Me.Controls.Add(Me.lblMensaje)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.KeyPreview = True
         Me.Name = "frmComentario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmComentario"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -87,7 +91,7 @@ Partial Class frmComentario
     End Sub
 
     Friend WithEvents lblMensaje As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtComentario As TextBox
     Friend WithEvents lblTeclas As Label
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckVimail As CheckBox
 End Class

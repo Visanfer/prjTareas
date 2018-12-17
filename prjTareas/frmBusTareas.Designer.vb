@@ -31,8 +31,8 @@ Partial Class frmBusTareas
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblEncargadas = New System.Windows.Forms.Label()
+        Me.LblAsignadas = New System.Windows.Forms.Label()
         Me.lstSalida = New System.Windows.Forms.ListView()
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.imgIconos16 = New System.Windows.Forms.ImageList(Me.components)
@@ -87,31 +87,31 @@ Partial Class frmBusTareas
         Me.ColumnHeader6.Text = "UR"
         Me.ColumnHeader6.Width = 30
         '
-        'Label2
+        'LblEncargadas
         '
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label2.Location = New System.Drawing.Point(8, 336)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(34, 320)
-        Me.Label2.TabIndex = 19
-        Me.Label2.Text = "ENCARGADAS"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblEncargadas.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.LblEncargadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblEncargadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblEncargadas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LblEncargadas.Location = New System.Drawing.Point(8, 336)
+        Me.LblEncargadas.Name = "LblEncargadas"
+        Me.LblEncargadas.Size = New System.Drawing.Size(34, 320)
+        Me.LblEncargadas.TabIndex = 19
+        Me.LblEncargadas.Text = "ENCARGADAS"
+        Me.LblEncargadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'LblAsignadas
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(8, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(34, 327)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "ASIGNADAS"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblAsignadas.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.LblAsignadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblAsignadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblAsignadas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LblAsignadas.Location = New System.Drawing.Point(8, 3)
+        Me.LblAsignadas.Name = "LblAsignadas"
+        Me.LblAsignadas.Size = New System.Drawing.Size(34, 327)
+        Me.LblAsignadas.TabIndex = 18
+        Me.LblAsignadas.Text = "ASIGNADAS"
+        Me.LblAsignadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lstSalida
         '
@@ -214,8 +214,8 @@ Partial Class frmBusTareas
         '
         Me.panCampos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panCampos.Controls.Add(Me.lstEntrada)
-        Me.panCampos.Controls.Add(Me.Label2)
-        Me.panCampos.Controls.Add(Me.Label1)
+        Me.panCampos.Controls.Add(Me.LblEncargadas)
+        Me.panCampos.Controls.Add(Me.LblAsignadas)
         Me.panCampos.Controls.Add(Me.lstSalida)
         Me.panCampos.Location = New System.Drawing.Point(12, 42)
         Me.panCampos.Name = "panCampos"
@@ -239,11 +239,14 @@ Partial Class frmBusTareas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1022, 745)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.panCampos)
         Me.Controls.Add(Me.lblTeclas)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.KeyPreview = True
         Me.Name = "frmBusTareas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmBusTareas"
         Me.panCampos.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -257,8 +260,8 @@ Partial Class frmBusTareas
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LblEncargadas As Label
+    Friend WithEvents LblAsignadas As Label
     Friend WithEvents lstSalida As ListView
     Friend WithEvents ColumnHeader13 As ColumnHeader
     Friend WithEvents imgIconos16 As ImageList

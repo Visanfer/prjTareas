@@ -47,7 +47,7 @@ Public Class clsTarea
         mnId_Responsable = CInt(loRecord("id_responsable") & "")
         msTitulo = Trim(loRecord("titulo") & "")
         msDescripcion = Trim(loRecord("descripcion") & "")
-        msId_Estado = Trim(loRecord("id_estado") & "")
+        mnId_Estado = Trim(loRecord("id_estado") & "")
         mdFecha_Inicio_Prevista = CDate(loRecord("fecha_inicio_prevista") & "")
         mdFecha_Fin_Prevista = CDate(loRecord("fecha_fin_prevista") & "")
         mdFecha_Inicio = CDate(loRecord("fecha_inicio") & "")
@@ -70,7 +70,7 @@ Public Class clsTarea
                         mnId_Responsable & "','" &
                         msTitulo & "'," &
                         msDescripcion & "','" &
-                        msId_Estado & "','" &
+                        mnId_Estado & "','" &
                         Format(mdFecha_Inicio_Prevista, formatoFechahora) & "','" &
                         Format(mdFecha_Fin_Prevista, formatoFechahora) & "','" &
                         Format(mdFecha_Inicio, formatoFechahora) & "','" &
@@ -84,7 +84,7 @@ Public Class clsTarea
                     "' id_responsable = '" & mnId_Responsable &
                     "' titulo = '" & msTitulo &
                     "' descripcion = '" & msDescripcion &
-                    "' id_estado = '" & msId_Estado &
+                    "' id_estado = '" & mnId_Estado &
                     "', fecha_inicio_prevista = '" & Format(mdFecha_Inicio_Prevista, formatoFechahora) &
                     "', fecha_fin_prevista = '" & Format(mdFecha_Fin_Prevista, formatoFechahora) &
                     "', fecha_inicio = '" & Format(mdFecha_Inicio, formatoFechahora) &

@@ -31,9 +31,9 @@ Partial Class frmEstados
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblNombre = New System.Windows.Forms.Label()
+        Me.BtnGrabar = New System.Windows.Forms.Button()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.lblTeclas = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -92,39 +92,39 @@ Partial Class frmEstados
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.LblNombre)
+        Me.GroupBox1.Controls.Add(Me.BtnGrabar)
+        Me.GroupBox1.Controls.Add(Me.TxtNombre)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 353)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(355, 65)
         Me.GroupBox1.TabIndex = 46
         Me.GroupBox1.TabStop = False
         '
-        'TextBox1
+        'LblNombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(82, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(185, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.LblNombre.AutoSize = True
+        Me.LblNombre.Location = New System.Drawing.Point(22, 32)
+        Me.LblNombre.Name = "LblNombre"
+        Me.LblNombre.Size = New System.Drawing.Size(54, 13)
+        Me.LblNombre.TabIndex = 2
+        Me.LblNombre.Text = "NOMBRE"
         '
-        'Button1
+        'BtnGrabar
         '
-        Me.Button1.Location = New System.Drawing.Point(280, 28)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(69, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "GRABAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnGrabar.Location = New System.Drawing.Point(280, 28)
+        Me.BtnGrabar.Name = "BtnGrabar"
+        Me.BtnGrabar.Size = New System.Drawing.Size(69, 23)
+        Me.BtnGrabar.TabIndex = 1
+        Me.BtnGrabar.Text = "GRABAR"
+        Me.BtnGrabar.UseVisualStyleBackColor = True
         '
-        'Label1
+        'TxtNombre
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "NOMBRE"
+        Me.TxtNombre.Location = New System.Drawing.Point(82, 29)
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.Size = New System.Drawing.Size(185, 20)
+        Me.TxtNombre.TabIndex = 0
         '
         'lblTeclas
         '
@@ -143,10 +143,14 @@ Partial Class frmEstados
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(379, 459)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lstEntrada)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.KeyPreview = True
         Me.Name = "frmEstados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmEstados"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -163,8 +167,8 @@ Partial Class frmEstados
     Friend WithEvents ColumnHeader12 As ColumnHeader
     Friend WithEvents ColumnHeader14 As ColumnHeader
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LblNombre As Label
+    Friend WithEvents BtnGrabar As Button
+    Friend WithEvents TxtNombre As TextBox
     Friend WithEvents lblTeclas As Label
 End Class

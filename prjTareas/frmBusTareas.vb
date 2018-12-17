@@ -18,4 +18,7 @@ Public Class frmBusTareas
         loTarea.ShowDialog()
     End Sub
 
+    Private Sub frmBusTareas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
