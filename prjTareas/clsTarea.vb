@@ -17,6 +17,7 @@ Public Class clsTarea
     Public mdFecha_Fin As Date = CDate("01/01/2000 00:00:00")
     Public mnId_Tarea_Padre As Integer = 0
 
+    Public mcolLog As Collection
     ' poner el resto de campos en el orden correspondiente (HECHO)
 
     Public mbEsNuevo As Boolean = True
@@ -49,9 +50,9 @@ Public Class clsTarea
         msDescripcion = Trim(loRecord("descripcion") & "")
         mnId_Estado = Trim(loRecord("id_estado") & "")
         mdFecha_Inicio_Prevista = CDate(loRecord("fecha_inicio_prevista") & "")
-        mdFecha_Fin_Prevista = CDate(loRecord("fecha_fin_prevista") & "")
+        mdFecha_Fin_Prevista = CDate(loRecord("fecha_final_prevista") & "")
         mdFecha_Inicio = CDate(loRecord("fecha_inicio") & "")
-        mdFecha_Fin = CDate(loRecord("fecha_fin") & "")
+        mdFecha_Fin = CDate(loRecord("fecha_final") & "")
         mnId_Tarea_Padre = CInt(loRecord("id_tarea_padre") & "")
 
         ' poner el resto de campos en el orden correspondiente (HECHO)
@@ -64,11 +65,11 @@ Public Class clsTarea
 
         If mbEsNuevo Then
             ' poner el resto de campos en el orden correspondiente (HECHO)
-            lsSql = "insert into tareas(fecha_creacion,id_solicitante,id_responsable,titulo,descripcion,id_estado,fecha_inicio_prevista,fecha_fin_prevista,fecha_inicio,fecha_fin,id_tarea_padre) values ('" &
+            lsSql = "insert into tareas(fecha_creacion,id_solicitante,id_responsable,titulo,descripcion,id_estado,fecha_inicio_prevista,fecha_final_prevista,fecha_inicio,fecha_final,id_tarea_padre) values ('" &
                         Format(mdFecha_Creacion, formatoFechahora) & "','" &
                         mnId_Solicitante & "','" &
                         mnId_Responsable & "','" &
-                        msTitulo & "'," &
+                        msTitulo & "','" &
                         msDescripcion & "','" &
                         mnId_Estado & "','" &
                         Format(mdFecha_Inicio_Prevista, formatoFechahora) & "','" &
@@ -103,6 +104,27 @@ Public Class clsTarea
         Dim lsSql As String = "delete from tareas where id_tarea = " & mnId_Tarea
         Dim loBaseDatos As New clsBaseDatos
         loBaseDatos.mrEjecutaComando(False, lsSql)
+
+    End Sub
+
+    Public Sub mrRecuperaLog()
+
+        mcolLog = New Collection
+
+        Dim lsSql As String = "select * from tareas_log where id_tarea_log = " & mnId_Tarea &
+                                " order by id_tarea_log desc"
+
+        Dim loBaseDatos As New clsBaseDatos
+        Dim loDatos As DataTable = loBaseDatos.mfoRecuperaDatos(False, lsSql, "tareas_log")
+
+        For Each loRow As DataRow In loDatos.Rows
+            Dim loTareaLog As New clsTareaLog
+            loTareaLog.mrCargaDatos(loRow)
+            loTareaLog.mbEsNuevo = False
+            mcolLog.Add(loTareaLog, loTareaLog.mpsCodigo)
+        Next
+
+
 
     End Sub
 

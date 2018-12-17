@@ -119,6 +119,7 @@ Partial Class frmBusTareas
         Me.lstSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lstSalida.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader1, Me.ColumnHeader13})
         Me.lstSalida.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstSalida.FullRowSelect = True
         Me.lstSalida.HideSelection = False
         Me.lstSalida.Location = New System.Drawing.Point(42, 336)
         Me.lstSalida.MultiSelect = False
@@ -187,6 +188,7 @@ Partial Class frmBusTareas
         Me.lstEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lstEntrada.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader12, Me.ColumnHeader14})
         Me.lstEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstEntrada.FullRowSelect = True
         Me.lstEntrada.HideSelection = False
         Me.lstEntrada.LargeImageList = Me.imgIconos16
         Me.lstEntrada.Location = New System.Drawing.Point(42, 3)
