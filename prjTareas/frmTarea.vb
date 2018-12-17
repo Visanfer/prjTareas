@@ -176,6 +176,7 @@ Public Class frmTarea
             loTareaLog.mdFecha = Now
             loTareaLog.mnId_Usuario = goUsuario.mnCodigo
             loTareaLog.msDescripcion = "CREACION DE LA TAREA"
+            If moTarea.mnId_Tarea_Padre > 0 Then loTareaLog.msDescripcion = "CREACION DE LA SUBTAREA"
             loTareaLog.mrGrabaDatos()
 
             ' CREO UN VIMAIL AVISANDO SOBRE EL TEMA
@@ -235,6 +236,30 @@ Public Class frmTarea
             mrCargaLog()
 
         End If
+
+    End Sub
+
+    Private Sub BtnAñadirComentario_Click(sender As Object, e As EventArgs) Handles BtnAñadirComentario.Click
+        Dim loComentario As New frmComentario
+        loComentario.moTarea = moTarea
+        loComentario.mrCargar()
+
+        If loComentario.mbComentarioAñadido Then mrCargaLog()
+    End Sub
+
+    Private Sub BtnCrearSubtarea_Click(sender As Object, e As EventArgs) Handles BtnCrearSubtarea.Click
+        mrSubNuevaTarea()
+    End Sub
+
+    Private Sub mrSubNuevaTarea()
+
+        Dim loTarea As New clsTarea
+        loTarea.mnId_Solicitante = goUsuario.mnCodigo
+        loTarea.mnId_Tarea_Padre = moTarea.mnId_Tarea
+
+        Dim loFormularioTarea As New frmTarea
+        loFormularioTarea.moTarea = loTarea
+        loFormularioTarea.mrCargar()
 
     End Sub
 
