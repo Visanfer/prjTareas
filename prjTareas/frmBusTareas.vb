@@ -62,7 +62,6 @@ Public Class frmBusTareas
                 Me.Close()
             Case Keys.F1
                 mrNuevaTarea()
-
         End Select
 
     End Sub
