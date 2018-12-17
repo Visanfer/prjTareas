@@ -147,9 +147,13 @@ Partial Class frmEstados
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lstEntrada)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
+        Me.MaximumSize = New System.Drawing.Size(395, 497)
+        Me.MinimumSize = New System.Drawing.Size(395, 497)
         Me.Name = "frmEstados"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmEstados"
         Me.GroupBox1.ResumeLayout(False)

@@ -35,12 +35,12 @@ Partial Class frmBusTareas
         Me.imgIconos16 = New System.Windows.Forms.ImageList(Me.components)
         Me.lblMensaje = New System.Windows.Forms.Label()
         Me.panCampos = New System.Windows.Forms.Panel()
-        Me.lblTeclas = New System.Windows.Forms.Label()
         Me.lstEntrada = New System.Windows.Forms.ListView()
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lblTeclas = New System.Windows.Forms.Label()
         Me.panCampos.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -147,18 +147,6 @@ Partial Class frmBusTareas
         Me.panCampos.Size = New System.Drawing.Size(997, 668)
         Me.panCampos.TabIndex = 42
         '
-        'lblTeclas
-        '
-        Me.lblTeclas.BackColor = System.Drawing.Color.Silver
-        Me.lblTeclas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTeclas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTeclas.Location = New System.Drawing.Point(12, 710)
-        Me.lblTeclas.Name = "lblTeclas"
-        Me.lblTeclas.Size = New System.Drawing.Size(997, 28)
-        Me.lblTeclas.TabIndex = 40
-        Me.lblTeclas.Text = "F1 - NUEVA TAREA                      ESC - SALIR"
-        Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'lstEntrada
         '
         Me.lstEntrada.BackColor = System.Drawing.SystemColors.HighlightText
@@ -197,18 +185,34 @@ Partial Class frmBusTareas
         Me.ColumnHeader8.Text = "ESTADO"
         Me.ColumnHeader8.Width = 150
         '
+        'lblTeclas
+        '
+        Me.lblTeclas.BackColor = System.Drawing.Color.Silver
+        Me.lblTeclas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblTeclas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTeclas.Location = New System.Drawing.Point(12, 710)
+        Me.lblTeclas.Name = "lblTeclas"
+        Me.lblTeclas.Size = New System.Drawing.Size(997, 28)
+        Me.lblTeclas.TabIndex = 40
+        Me.lblTeclas.Text = "F1 - NUEVA TAREA                      ESC - SALIR"
+        Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmBusTareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1022, 745)
+        Me.ClientSize = New System.Drawing.Size(1008, 730)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.panCampos)
         Me.Controls.Add(Me.lblTeclas)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
+        Me.MaximumSize = New System.Drawing.Size(1024, 768)
+        Me.MinimumSize = New System.Drawing.Size(1024, 768)
         Me.Name = "frmBusTareas"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmBusTareas"
         Me.panCampos.ResumeLayout(False)
