@@ -19,7 +19,7 @@ Public Class frmTarea
             Case Keys.Enter
                 If Not txtDescripcion.Focused Then SendKeys.Send("{TAB}")
             Case Keys.F9
-                mrBuscaUsuario
+                If btnF9.Visible Then mrBuscaUsuario()
             Case Keys.F5
                 mrGrabar()
             Case Keys.Escape
@@ -43,8 +43,8 @@ Public Class frmTarea
             loResponsable.mnCodigo = loBusUsuarios.mnUsuarioSeleccionado
             loResponsable.mrRecuperaDatos()
 
-            lblNombreEncargado.Tag = loBusUsuarios.mnUsuarioSeleccionado
-            lblNombreEncargado.Text = loResponsable.msNombre
+            lblNombreResponsable.Tag = loBusUsuarios.mnUsuarioSeleccionado
+            lblNombreResponsable.Text = loResponsable.msNombre
         End If
 
     End Sub
@@ -53,10 +53,11 @@ Public Class frmTarea
 
         moTarea.mrRecuperaLog()
 
+        lstLog.Items.Clear()
         For Each loTareaLog As clsTareaLog In moTarea.mcolLog
             Dim loItem As New ListViewItem
             loItem.Text = loTareaLog.mdFecha
-            loItem.SubItems.Add(loTareaLog.mnId_Usuario)
+            loItem.SubItems.Add(mfsUsuarioNombre(loTareaLog.mnId_Usuario))
             loItem.SubItems.Add(loTareaLog.msDescripcion)
             lstLog.Items.Add(loItem)
         Next
@@ -75,19 +76,37 @@ Public Class frmTarea
         mrCargaEstados()
         mrCargaLog()
 
-        lblNombreSolicitador.Tag = moTarea.mnId_Solicitante
-        lblNombreSolicitador.Text = mfsUsuarioNombre(moTarea.mnId_Solicitante)
+        lblNombreSolicitante.Tag = moTarea.mnId_Solicitante
+        lblNombreSolicitante.Text = mfsUsuarioNombre(moTarea.mnId_Solicitante)
 
-        dtpFechaFinPrevisto.Value = moTarea.mdFecha_Fin_Prevista
         lblFechaCreacion.Text = Format(moTarea.mdFecha_Creacion, "dd/MM/yyyy")
+        If moTarea.mdFecha_Fin <> "01/01/2000" Then LblFechaFinal.Text = Format(moTarea.mdFecha_Fin, "dd/MM/yyyy")
+        If moTarea.mdFecha_Inicio <> "01/01/2000" Then LblFechaInicio.Text = Format(moTarea.mdFecha_Inicio, "dd/MM/yyyy")
+
         txtTitulo.Text = moTarea.msTitulo
         txtDescripcion.Text = moTarea.msDescripcion.Replace("<br>", vbCrLf)
 
         If moTarea.mbEsNuevo Then
             cboEstado.SelectedIndex = 0
         Else
-            cboEstado.Text = goBusEstados.mcolEstados(moTarea.mnId_Estado).msNombre
-            lblNombreEncargado.Text = mfsUsuarioNombre(moTarea.mnId_Responsable)
+            cboEstado.Text = goBusEstados.mcolEstados(moTarea.mnId_Estado - 1).msNombre
+            lblNombreResponsable.Tag = moTarea.mnId_Responsable
+            lblNombreResponsable.Text = mfsUsuarioNombre(moTarea.mnId_Responsable)
+        End If
+
+        ' CONTROL QUE PUEDE HACER CADA UNO
+        If goUsuario.mnCodigo = moTarea.mnId_Solicitante Then
+            BtnAsignarOtro.Visible = False
+            BtnCrearSubtarea.Visible = False
+            cboEstado.Enabled = False
+            If Not moTarea.mbEsNuevo Then btnF9.Visible = False
+        End If
+
+        If moTarea.mbEsNuevo Then
+            BtnAsignarOtro.Visible = False
+            BtnCrearSubtarea.Visible = False
+            BtnAñadirComentario.Visible = False
+            cboEstado.Enabled = False
         End If
 
     End Sub
@@ -95,9 +114,9 @@ Public Class frmTarea
     Private Sub mrGrabar()
 
         ' primero reviso que esten todos los campos rellenos
-        lblNombreEncargado.BackColor = Color.White
-        If lblNombreEncargado.Text.Length = 0 Then
-            lblNombreEncargado.BackColor = Color.LightPink
+        lblNombreResponsable.BackColor = Color.White
+        If lblNombreResponsable.Text.Length = 0 Then
+            lblNombreResponsable.BackColor = Color.LightPink
             MsgBox("Debes indicar que usuario será el encargado de la tarea", MsgBoxStyle.Critical, "Visanfer.Net")
             Exit Sub
         End If
@@ -126,21 +145,25 @@ Public Class frmTarea
             Dim lnEstadoActual As Integer = cboEstado.SelectedIndex + 1
             If lnEstadoActual <> moTarea.mnId_Estado Then
 
+                ' si el estado final es comenzada pongo la fecha comienzo
+                If lnEstadoActual = 3 Then moTarea.mdFecha_Inicio = Now
+                If lnEstadoActual = 4 Then moTarea.mdFecha_Fin = Now
+
                 ' GRABO UN COMENTARIO SOBRE LOS CAMBIOS EN LA TAREA
                 Dim loTareaLog As New clsTareaLog
                 loTareaLog.mnId_Tarea = moTarea.mnId_Tarea
                 loTareaLog.mdFecha = Now
                 loTareaLog.mnId_Usuario = goUsuario.mnCodigo
-                loTareaLog.msDescripcion = "CAMBIO DE ESTADO [" & goBusEstados.mcolEstados(moTarea.mnId_Estado).msNombre &
-                    " -> " & moBusTareas.mcolEstados(lnEstadoActual).msNombre & "]"
+                loTareaLog.msDescripcion = "CAMBIO DE ESTADO [" & goBusEstados.mcolEstados(moTarea.mnId_Estado - 1).msNombre &
+                    " -> " & goBusEstados.mcolEstados(lnEstadoActual - 1).msNombre & "]"
                 loTareaLog.mrGrabaDatos()
 
             End If
 
         End If
 
-        moTarea.mnId_Solicitante = Val(lblNombreSolicitador.Tag)
-        moTarea.mnId_Responsable = Val(lblNombreEncargado.Tag)
+        moTarea.mnId_Solicitante = Val(lblNombreSolicitante.Tag)
+        moTarea.mnId_Responsable = Val(lblNombreResponsable.Tag)
         moTarea.mnId_Estado = cboEstado.SelectedIndex + 1
         moTarea.msTitulo = txtTitulo.Text
         moTarea.msDescripcion = txtDescripcion.Text.Replace(vbCrLf, "<br>")
@@ -172,6 +195,45 @@ Public Class frmTarea
         If mbPrimeraVez Then
             mbPrimeraVez = False
             mrCargarDatos()
+        End If
+
+    End Sub
+
+    Private Sub BtnF9_Click(sender As Object, e As EventArgs) Handles btnF9.Click
+        mrBuscaUsuario()
+    End Sub
+
+    Private Sub BtnAsignarOtro_Click(sender As Object, e As EventArgs) Handles BtnAsignarOtro.Click
+
+        prjUsuarios.goUsuario = goUsuario
+        Dim loBusUsuario As New prjUsuarios.clsBusUsuarios
+        loBusUsuario.msActivos = "S"
+        loBusUsuario.mrBuscaUsuarios()
+
+        Dim loBusUsuarios As New prjUsuarios.frmBusUsuarios
+        loBusUsuarios.mbSeleccionaUsuario = True
+        loBusUsuarios.mrCargar(loBusUsuario)
+        If loBusUsuarios.mnUsuarioSeleccionado > 0 Then
+            Dim loResponsable As New clsUsuario
+            loResponsable.mnCodigo = loBusUsuarios.mnUsuarioSeleccionado
+            loResponsable.mrRecuperaDatos()
+
+            lblNombreResponsable.Tag = loBusUsuarios.mnUsuarioSeleccionado
+            lblNombreResponsable.Text = loResponsable.msNombre
+
+            Dim loTareaLog As New clsTareaLog
+            loTareaLog.mnId_Tarea = moTarea.mnId_Tarea
+            loTareaLog.mdFecha = Now
+            loTareaLog.mnId_Usuario = goUsuario.mnCodigo
+            loTareaLog.msDescripcion = "CAMBIO DE RESPONSABLE [" & loBusUsuarios.mnUsuarioSeleccionado & " " &
+                mfsUsuarioNombre(loBusUsuarios.mnUsuarioSeleccionado) & "]"
+            loTareaLog.mrGrabaDatos()
+
+            moTarea.mnId_Responsable = loBusUsuarios.mnUsuarioSeleccionado
+            moTarea.mrGrabaDatos()
+
+            mrCargaLog()
+
         End If
 
     End Sub

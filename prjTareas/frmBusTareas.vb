@@ -31,9 +31,9 @@ Public Class frmBusTareas
             Dim loItem As New ListViewItem
             loItem.Tag = loTarea.mpsCodigo
             loItem.Text = loTarea.mdFecha_Creacion
-            loItem.SubItems.Add(mfsUsuarioNombre(loTarea.mnId_Responsable))
+            loItem.SubItems.Add(mfsUsuarioNombre(loTarea.mnId_Solicitante))
             loItem.SubItems.Add(loTarea.msTitulo)
-            loItem.SubItems.Add(goBusEstados.mcolEstados(loTarea.mnId_Estado).msNombre)
+            loItem.SubItems.Add(goBusEstados.mcolEstados(loTarea.mnId_Estado - 1).msNombre)
             lstEntrada.Items.Add(loItem)
         Next
 
@@ -44,9 +44,9 @@ Public Class frmBusTareas
             Dim loItem As New ListViewItem
             loItem.Tag = loTarea.mpsCodigo
             loItem.Text = loTarea.mdFecha_Creacion
-            loItem.SubItems.Add(mfsUsuarioNombre(loTarea.mnId_Solicitante))
+            loItem.SubItems.Add(mfsUsuarioNombre(loTarea.mnId_Responsable))
             loItem.SubItems.Add(loTarea.msTitulo)
-            loItem.SubItems.Add(goBusEstados.mcolEstados(loTarea.mnId_Estado).msNombre)
+            loItem.SubItems.Add(goBusEstados.mcolEstados(loTarea.mnId_Estado - 1).msNombre)
             lstSalida.Items.Add(loItem)
         Next
 
@@ -86,7 +86,6 @@ Public Class frmBusTareas
 
         Dim loTarea As New clsTarea
         loTarea.mnId_Solicitante = goUsuario.mnCodigo
-        loTarea.mdFecha_Fin_Prevista = DateAdd(DateInterval.Day, 30, Now)
 
         Dim loFormularioTarea As New frmTarea
         loFormularioTarea.moTarea = loTarea

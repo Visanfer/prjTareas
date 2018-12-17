@@ -11,8 +11,6 @@ Public Class clsTarea
     Public msTitulo As String = ""
     Public msDescripcion As String = ""
     Public mnId_Estado As Integer = 0
-    Public mdFecha_Inicio_Prevista As Date = CDate("01/01/2000 00:00:00")
-    Public mdFecha_Fin_Prevista As Date = CDate("01/01/2000 00:00:00")
     Public mdFecha_Inicio As Date = CDate("01/01/2000 00:00:00")
     Public mdFecha_Fin As Date = CDate("01/01/2000 00:00:00")
     Public mnId_Tarea_Padre As Integer = 0
@@ -49,8 +47,6 @@ Public Class clsTarea
         msTitulo = Trim(loRecord("titulo") & "")
         msDescripcion = Trim(loRecord("descripcion") & "")
         mnId_Estado = Trim(loRecord("id_estado") & "")
-        mdFecha_Inicio_Prevista = CDate(loRecord("fecha_inicio_prevista") & "")
-        mdFecha_Fin_Prevista = CDate(loRecord("fecha_final_prevista") & "")
         mdFecha_Inicio = CDate(loRecord("fecha_inicio") & "")
         mdFecha_Fin = CDate(loRecord("fecha_final") & "")
         mnId_Tarea_Padre = CInt(loRecord("id_tarea_padre") & "")
@@ -65,15 +61,13 @@ Public Class clsTarea
 
         If mbEsNuevo Then
             ' poner el resto de campos en el orden correspondiente (HECHO)
-            lsSql = "insert into tareas(fecha_creacion,id_solicitante,id_responsable,titulo,descripcion,id_estado,fecha_inicio_prevista,fecha_final_prevista,fecha_inicio,fecha_final,id_tarea_padre) values ('" &
+            lsSql = "insert into tareas(fecha_creacion,id_solicitante,id_responsable,titulo,descripcion,id_estado,fecha_inicio,fecha_final,id_tarea_padre) values ('" &
                         Format(mdFecha_Creacion, formatoFechahora) & "','" &
                         mnId_Solicitante & "','" &
                         mnId_Responsable & "','" &
                         msTitulo & "','" &
                         msDescripcion & "','" &
                         mnId_Estado & "','" &
-                        Format(mdFecha_Inicio_Prevista, formatoFechahora) & "','" &
-                        Format(mdFecha_Fin_Prevista, formatoFechahora) & "','" &
                         Format(mdFecha_Inicio, formatoFechahora) & "','" &
                         Format(mdFecha_Fin, formatoFechahora) & "','" &
                         mnId_Tarea_Padre & "'); SELECT LAST_INSERT_ID();"
@@ -81,16 +75,14 @@ Public Class clsTarea
         Else
             ' poner el resto de campos en el orden correspondiente (HECHO)
             lsSql = "update tareas set fecha_creacion = '" & Format(mdFecha_Creacion, formatoFechahora) &
-                    "' id_solicitante = '" & mnId_Solicitante &
-                    "' id_responsable = '" & mnId_Responsable &
-                    "' titulo = '" & msTitulo &
-                    "' descripcion = '" & msDescripcion &
-                    "' id_estado = '" & mnId_Estado &
-                    "', fecha_inicio_prevista = '" & Format(mdFecha_Inicio_Prevista, formatoFechahora) &
-                    "', fecha_fin_prevista = '" & Format(mdFecha_Fin_Prevista, formatoFechahora) &
+                    "', id_solicitante = '" & mnId_Solicitante &
+                    "', id_responsable = '" & mnId_Responsable &
+                    "', titulo = '" & msTitulo &
+                    "', descripcion = '" & msDescripcion &
+                    "', id_estado = '" & mnId_Estado &
                     "', fecha_inicio = '" & Format(mdFecha_Inicio, formatoFechahora) &
-                    "', fecha_fin = '" & Format(mdFecha_Fin, formatoFechahora) &
-                    "' id_tarea_padre = '" & mnId_Tarea_Padre &
+                    "', fecha_final = '" & Format(mdFecha_Fin, formatoFechahora) &
+                    "', id_tarea_padre = '" & mnId_Tarea_Padre &
                     "' where id_tarea = " & mnId_Tarea
             loBaseDatos.mrEjecutaComando(False, lsSql)
         End If
@@ -111,7 +103,7 @@ Public Class clsTarea
 
         mcolLog = New Collection
 
-        Dim lsSql As String = "select * from tareas_log where id_tarea_log = " & mnId_Tarea &
+        Dim lsSql As String = "select * from tareas_log where id_tarea = " & mnId_Tarea &
                                 " order by id_tarea_log desc"
 
         Dim loBaseDatos As New clsBaseDatos
