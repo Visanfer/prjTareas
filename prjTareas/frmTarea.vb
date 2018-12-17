@@ -158,6 +158,9 @@ Public Class frmTarea
                     " -> " & goBusEstados.mcolEstados(lnEstadoActual - 1).msNombre & "]"
                 loTareaLog.mrGrabaDatos()
 
+                ' CREO UN VIMAIL AVISANDO SOBRE cambio de estado
+                mrMandaVimail(moTarea.mnId_Responsable, moTarea.mnId_Solicitante, moTarea.msTitulo, "CAMBIO DE ESTADO EN TAREA")
+
             End If
 
         End If
@@ -180,6 +183,7 @@ Public Class frmTarea
             loTareaLog.mrGrabaDatos()
 
             ' CREO UN VIMAIL AVISANDO SOBRE EL TEMA
+            mrMandaVimail(moTarea.mnId_Solicitante, moTarea.mnId_Responsable, moTarea.msTitulo, "TIENES UNA NUEVA TAREA")
 
         End If
 
@@ -229,6 +233,9 @@ Public Class frmTarea
             loTareaLog.msDescripcion = "CAMBIO DE RESPONSABLE [" & loBusUsuarios.mnUsuarioSeleccionado & " " &
                 mfsUsuarioNombre(loBusUsuarios.mnUsuarioSeleccionado) & "]"
             loTareaLog.mrGrabaDatos()
+
+            ' CREO UN VIMAIL AVISANDO SOBRE cambio de USUARIO
+            mrMandaVimail(goUsuario.mnCodigo, moTarea.mnId_Solicitante, moTarea.msTitulo, "CAMBIO DE RESPONSABLE EN TAREA")
 
             moTarea.mnId_Responsable = loBusUsuarios.mnUsuarioSeleccionado
             moTarea.mrGrabaDatos()

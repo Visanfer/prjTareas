@@ -40,16 +40,23 @@ Public Module modTareas
 
     End Function
 
-    Public Sub mrMandaVimail(ByVal lnDe As Integer, ByVal lnPara As Integer, ByVal lsMensaje As String)
+    Public Sub mrMandaVimail(ByVal lnDe As Integer, ByVal lnPara As Integer, ByVal lsTituloTarea As String, ByVal lsMensaje As String)
+
+        goProfile.mrRecuperaDatos()
 
         Dim loVimail As New prjComunicacionInterna.clsVimail
         loVimail.mnEmpresa = 1
         loVimail.mnDe = lnDe
         loVimail.mnPara = lnPara
-        loVimail.msAsunto = "NOTIFICACION TAREA"
+        loVimail.msAsunto = "NOTIFICACION TAREA [" & lsTituloTarea & "]"
         loVimail.msCuerpo = lsMensaje
+        loVimail.mdFecha = Now
+        loVimail.mdFechaAviso = Now
+        loVimail.msHora = Format(Now, "HH:mm:ss")
+        loVimail.msHoraAviso = Format(Now, "HH:mm:ss")
+        loVimail.mnLinea = 1
+        loVimail.msIP = goProfile.msIP
         loVimail.mrGrabaDatos()
-
 
     End Sub
 
