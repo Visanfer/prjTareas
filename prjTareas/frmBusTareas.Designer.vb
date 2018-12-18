@@ -76,6 +76,7 @@ Partial Class frmBusTareas
         Me.lstEntrada.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8})
         Me.lstEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstEntrada.FullRowSelect = True
+        Me.lstEntrada.GridLines = True
         Me.lstEntrada.HideSelection = False
         Me.lstEntrada.Location = New System.Drawing.Point(14, 41)
         Me.lstEntrada.MultiSelect = False
@@ -140,6 +141,7 @@ Partial Class frmBusTareas
         Me.lstSalida.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader1})
         Me.lstSalida.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSalida.FullRowSelect = True
+        Me.lstSalida.GridLines = True
         Me.lstSalida.HideSelection = False
         Me.lstSalida.Location = New System.Drawing.Point(14, 380)
         Me.lstSalida.MultiSelect = False

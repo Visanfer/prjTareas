@@ -20,7 +20,6 @@ Public Class frmBusTareas
 
     Private Sub mrCargaDatos()
 
-
         moBuscaTareas = New clsBusTareas
         moBuscaTareas.mnId_Responsable = goUsuario.mnCodigo
         moBuscaTareas.msDesde = Format(DateAdd(DateInterval.Day, -180, Now), formatoFecha)
