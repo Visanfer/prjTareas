@@ -25,7 +25,7 @@ Partial Class frmComentario
         Me.lblMensaje = New System.Windows.Forms.Label()
         Me.TxtComentario = New System.Windows.Forms.TextBox()
         Me.lblTeclas = New System.Windows.Forms.Label()
-        Me.CheckVimail = New System.Windows.Forms.CheckBox()
+        Me.chkVimail = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'lblMensaje
@@ -61,15 +61,15 @@ Partial Class frmComentario
         Me.lblTeclas.Text = "F5 - GRABAR                      ESC - SALIR"
         Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'CheckVimail
+        'chkVimail
         '
-        Me.CheckVimail.AutoSize = True
-        Me.CheckVimail.Location = New System.Drawing.Point(13, 207)
-        Me.CheckVimail.Name = "CheckVimail"
-        Me.CheckVimail.Size = New System.Drawing.Size(288, 17)
-        Me.CheckVimail.TabIndex = 52
-        Me.CheckVimail.Text = "INFORMAR MEDIANTE UN VIMAIL AL SOLICITANTE"
-        Me.CheckVimail.UseVisualStyleBackColor = True
+        Me.chkVimail.AutoSize = True
+        Me.chkVimail.Location = New System.Drawing.Point(13, 207)
+        Me.chkVimail.Name = "chkVimail"
+        Me.chkVimail.Size = New System.Drawing.Size(288, 17)
+        Me.chkVimail.TabIndex = 52
+        Me.chkVimail.Text = "INFORMAR MEDIANTE UN VIMAIL AL SOLICITANTE"
+        Me.chkVimail.UseVisualStyleBackColor = True
         '
         'frmComentario
         '
@@ -77,7 +77,7 @@ Partial Class frmComentario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(608, 268)
         Me.ControlBox = False
-        Me.Controls.Add(Me.CheckVimail)
+        Me.Controls.Add(Me.chkVimail)
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.TxtComentario)
         Me.Controls.Add(Me.lblMensaje)
@@ -98,5 +98,5 @@ Partial Class frmComentario
     Friend WithEvents lblMensaje As Label
     Friend WithEvents TxtComentario As TextBox
     Friend WithEvents lblTeclas As Label
-    Friend WithEvents CheckVimail As CheckBox
+    Friend WithEvents chkVimail As CheckBox
 End Class

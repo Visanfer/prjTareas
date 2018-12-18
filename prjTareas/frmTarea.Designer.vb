@@ -24,10 +24,6 @@ Partial Class frmTarea
     Private Sub InitializeComponent()
         Me.lblMensaje = New System.Windows.Forms.Label()
         Me.lblTeclas = New System.Windows.Forms.Label()
-        Me.lstLog = New System.Windows.Forms.ListView()
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.LblHistorial = New System.Windows.Forms.Label()
         Me.LblTitulo = New System.Windows.Forms.Label()
         Me.txtTitulo = New System.Windows.Forms.TextBox()
@@ -49,6 +45,7 @@ Partial Class frmTarea
         Me.lblFechaCreacion = New System.Windows.Forms.Label()
         Me.lblNombreResponsable = New System.Windows.Forms.Label()
         Me.lblNombreSolicitante = New System.Windows.Forms.Label()
+        Me.panComentarios = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
         'lblMensaje
@@ -75,45 +72,14 @@ Partial Class frmTarea
         Me.lblTeclas.Text = "F5 - GRABAR CAMBIOS                      ESC - SALIR"
         Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lstLog
-        '
-        Me.lstLog.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lstLog.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader7, Me.ColumnHeader8})
-        Me.lstLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstLog.FullRowSelect = True
-        Me.lstLog.HideSelection = False
-        Me.lstLog.Location = New System.Drawing.Point(12, 455)
-        Me.lstLog.MultiSelect = False
-        Me.lstLog.Name = "lstLog"
-        Me.lstLog.Size = New System.Drawing.Size(984, 238)
-        Me.lstLog.TabIndex = 44
-        Me.lstLog.UseCompatibleStateImageBehavior = False
-        Me.lstLog.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Text = "FECHA"
-        Me.ColumnHeader11.Width = 150
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "USUARIO"
-        Me.ColumnHeader7.Width = 300
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "DESCRIPCION"
-        Me.ColumnHeader8.Width = 400
-        '
         'LblHistorial
         '
         Me.LblHistorial.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LblHistorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblHistorial.Location = New System.Drawing.Point(12, 428)
+        Me.LblHistorial.Location = New System.Drawing.Point(12, 362)
         Me.LblHistorial.Name = "LblHistorial"
-        Me.LblHistorial.Size = New System.Drawing.Size(984, 34)
+        Me.LblHistorial.Size = New System.Drawing.Size(984, 36)
         Me.LblHistorial.TabIndex = 45
         Me.LblHistorial.Text = "HISTORIAL"
         Me.LblHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -121,7 +87,7 @@ Partial Class frmTarea
         'LblTitulo
         '
         Me.LblTitulo.AutoSize = True
-        Me.LblTitulo.Location = New System.Drawing.Point(12, 218)
+        Me.LblTitulo.Location = New System.Drawing.Point(12, 191)
         Me.LblTitulo.Name = "LblTitulo"
         Me.LblTitulo.Size = New System.Drawing.Size(46, 13)
         Me.LblTitulo.TabIndex = 46
@@ -129,7 +95,7 @@ Partial Class frmTarea
         '
         'txtTitulo
         '
-        Me.txtTitulo.Location = New System.Drawing.Point(64, 214)
+        Me.txtTitulo.Location = New System.Drawing.Point(64, 187)
         Me.txtTitulo.MaxLength = 100
         Me.txtTitulo.Name = "txtTitulo"
         Me.txtTitulo.Size = New System.Drawing.Size(932, 20)
@@ -138,7 +104,7 @@ Partial Class frmTarea
         'LblDescripcion
         '
         Me.LblDescripcion.AutoSize = True
-        Me.LblDescripcion.Location = New System.Drawing.Point(12, 253)
+        Me.LblDescripcion.Location = New System.Drawing.Point(15, 220)
         Me.LblDescripcion.Name = "LblDescripcion"
         Me.LblDescripcion.Size = New System.Drawing.Size(80, 13)
         Me.LblDescripcion.TabIndex = 48
@@ -146,11 +112,11 @@ Partial Class frmTarea
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(12, 269)
+        Me.txtDescripcion.Location = New System.Drawing.Point(15, 236)
         Me.txtDescripcion.MaxLength = 300
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(984, 156)
+        Me.txtDescripcion.Size = New System.Drawing.Size(984, 123)
         Me.txtDescripcion.TabIndex = 49
         '
         'LblEncargado
@@ -174,7 +140,7 @@ Partial Class frmTarea
         'LblFechaIniciom
         '
         Me.LblFechaIniciom.AutoSize = True
-        Me.LblFechaIniciom.Location = New System.Drawing.Point(12, 135)
+        Me.LblFechaIniciom.Location = New System.Drawing.Point(12, 128)
         Me.LblFechaIniciom.Name = "LblFechaIniciom"
         Me.LblFechaIniciom.Size = New System.Drawing.Size(77, 13)
         Me.LblFechaIniciom.TabIndex = 56
@@ -183,7 +149,7 @@ Partial Class frmTarea
         'LblFechaFinalm
         '
         Me.LblFechaFinalm.AutoSize = True
-        Me.LblFechaFinalm.Location = New System.Drawing.Point(12, 161)
+        Me.LblFechaFinalm.Location = New System.Drawing.Point(12, 153)
         Me.LblFechaFinalm.Name = "LblFechaFinalm"
         Me.LblFechaFinalm.Size = New System.Drawing.Size(75, 13)
         Me.LblFechaFinalm.TabIndex = 58
@@ -211,7 +177,7 @@ Partial Class frmTarea
         'btnF9
         '
         Me.btnF9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnF9.Location = New System.Drawing.Point(477, 74)
+        Me.btnF9.Location = New System.Drawing.Point(431, 74)
         Me.btnF9.Name = "btnF9"
         Me.btnF9.Size = New System.Drawing.Size(27, 20)
         Me.btnF9.TabIndex = 62
@@ -220,7 +186,7 @@ Partial Class frmTarea
         '
         'BtnAsignarOtro
         '
-        Me.BtnAsignarOtro.Location = New System.Drawing.Point(752, 131)
+        Me.BtnAsignarOtro.Location = New System.Drawing.Point(755, 105)
         Me.BtnAsignarOtro.Name = "BtnAsignarOtro"
         Me.BtnAsignarOtro.Size = New System.Drawing.Size(244, 23)
         Me.BtnAsignarOtro.TabIndex = 63
@@ -229,7 +195,7 @@ Partial Class frmTarea
         '
         'BtnAñadirComentario
         '
-        Me.BtnAñadirComentario.Location = New System.Drawing.Point(752, 158)
+        Me.BtnAñadirComentario.Location = New System.Drawing.Point(755, 132)
         Me.BtnAñadirComentario.Name = "BtnAñadirComentario"
         Me.BtnAñadirComentario.Size = New System.Drawing.Size(244, 23)
         Me.BtnAñadirComentario.TabIndex = 64
@@ -238,7 +204,7 @@ Partial Class frmTarea
         '
         'BtnCrearSubtarea
         '
-        Me.BtnCrearSubtarea.Location = New System.Drawing.Point(752, 104)
+        Me.BtnCrearSubtarea.Location = New System.Drawing.Point(755, 78)
         Me.BtnCrearSubtarea.Name = "BtnCrearSubtarea"
         Me.BtnCrearSubtarea.Size = New System.Drawing.Size(244, 23)
         Me.BtnCrearSubtarea.TabIndex = 65
@@ -258,7 +224,7 @@ Partial Class frmTarea
         '
         Me.LblFechaFinal.BackColor = System.Drawing.Color.White
         Me.LblFechaFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblFechaFinal.Location = New System.Drawing.Point(166, 157)
+        Me.LblFechaFinal.Location = New System.Drawing.Point(120, 149)
         Me.LblFechaFinal.Name = "LblFechaFinal"
         Me.LblFechaFinal.Size = New System.Drawing.Size(100, 20)
         Me.LblFechaFinal.TabIndex = 69
@@ -268,7 +234,7 @@ Partial Class frmTarea
         '
         Me.LblFechaInicio.BackColor = System.Drawing.Color.White
         Me.LblFechaInicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblFechaInicio.Location = New System.Drawing.Point(166, 131)
+        Me.LblFechaInicio.Location = New System.Drawing.Point(120, 124)
         Me.LblFechaInicio.Name = "LblFechaInicio"
         Me.LblFechaInicio.Size = New System.Drawing.Size(100, 20)
         Me.LblFechaInicio.TabIndex = 70
@@ -278,7 +244,7 @@ Partial Class frmTarea
         '
         Me.lblFechaCreacion.BackColor = System.Drawing.Color.White
         Me.lblFechaCreacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblFechaCreacion.Location = New System.Drawing.Point(166, 100)
+        Me.lblFechaCreacion.Location = New System.Drawing.Point(120, 100)
         Me.lblFechaCreacion.Name = "lblFechaCreacion"
         Me.lblFechaCreacion.Size = New System.Drawing.Size(100, 20)
         Me.lblFechaCreacion.TabIndex = 71
@@ -288,7 +254,7 @@ Partial Class frmTarea
         '
         Me.lblNombreResponsable.BackColor = System.Drawing.Color.White
         Me.lblNombreResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblNombreResponsable.Location = New System.Drawing.Point(166, 74)
+        Me.lblNombreResponsable.Location = New System.Drawing.Point(120, 74)
         Me.lblNombreResponsable.Name = "lblNombreResponsable"
         Me.lblNombreResponsable.Size = New System.Drawing.Size(311, 20)
         Me.lblNombreResponsable.TabIndex = 72
@@ -298,11 +264,21 @@ Partial Class frmTarea
         '
         Me.lblNombreSolicitante.BackColor = System.Drawing.Color.White
         Me.lblNombreSolicitante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblNombreSolicitante.Location = New System.Drawing.Point(166, 48)
+        Me.lblNombreSolicitante.Location = New System.Drawing.Point(120, 48)
         Me.lblNombreSolicitante.Name = "lblNombreSolicitante"
         Me.lblNombreSolicitante.Size = New System.Drawing.Size(311, 20)
         Me.lblNombreSolicitante.TabIndex = 73
         Me.lblNombreSolicitante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'panComentarios
+        '
+        Me.panComentarios.AutoScroll = True
+        Me.panComentarios.BackColor = System.Drawing.Color.White
+        Me.panComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panComentarios.Location = New System.Drawing.Point(12, 391)
+        Me.panComentarios.Name = "panComentarios"
+        Me.panComentarios.Size = New System.Drawing.Size(984, 302)
+        Me.panComentarios.TabIndex = 74
         '
         'frmTarea
         '
@@ -310,6 +286,7 @@ Partial Class frmTarea
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 730)
         Me.ControlBox = False
+        Me.Controls.Add(Me.panComentarios)
         Me.Controls.Add(Me.lblNombreSolicitante)
         Me.Controls.Add(Me.lblNombreResponsable)
         Me.Controls.Add(Me.lblFechaCreacion)
@@ -330,7 +307,6 @@ Partial Class frmTarea
         Me.Controls.Add(Me.LblDescripcion)
         Me.Controls.Add(Me.txtTitulo)
         Me.Controls.Add(Me.LblTitulo)
-        Me.Controls.Add(Me.lstLog)
         Me.Controls.Add(Me.lblTeclas)
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.LblHistorial)
@@ -350,10 +326,6 @@ Partial Class frmTarea
 
     Friend WithEvents lblMensaje As Label
     Friend WithEvents lblTeclas As Label
-    Friend WithEvents lstLog As ListView
-    Friend WithEvents ColumnHeader11 As ColumnHeader
-    Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents LblHistorial As Label
     Friend WithEvents LblTitulo As Label
     Friend WithEvents txtTitulo As TextBox
@@ -375,4 +347,5 @@ Partial Class frmTarea
     Friend WithEvents lblFechaCreacion As Label
     Friend WithEvents lblNombreResponsable As Label
     Friend WithEvents lblNombreSolicitante As Label
+    Friend WithEvents panComentarios As Panel
 End Class

@@ -53,14 +53,40 @@ Public Class frmTarea
 
         moTarea.mrRecuperaLog()
 
-        lstLog.Items.Clear()
+        panComentarios.Controls.Clear()
         For Each loTareaLog As clsTareaLog In moTarea.mcolLog
-            Dim loItem As New ListViewItem
-            loItem.Text = loTareaLog.mdFecha
-            loItem.SubItems.Add(mfsUsuarioNombre(loTareaLog.mnId_Usuario))
-            loItem.SubItems.Add(loTareaLog.msDescripcion)
-            lstLog.Items.Add(loItem)
+            mrAñadeLabel(loTareaLog)
         Next
+
+    End Sub
+
+    Private Sub mrAñadeLabel(ByVal loTareaLog As clsTareaLog)
+
+        Static lnTop As Integer
+        If panComentarios.Controls.Count = 0 Then lnTop = 2
+
+        Dim lbSolicitante As Boolean = (loTareaLog.mnId_Usuario = moTarea.mnId_Solicitante)
+
+        Dim loLabel As New Label
+        loLabel.BorderStyle = BorderStyle.FixedSingle
+        loLabel.AutoSize = True
+        loLabel.Text = Format(loTareaLog.mdFecha, "dd/MM/yyyy HH:mm:ss") & " - " &
+            mfsUsuarioNombre(loTareaLog.mnId_Usuario) & vbCrLf & loTareaLog.msDescripcion.Replace("<br>", vbCrLf)
+
+        panComentarios.Controls.Add(loLabel)
+
+        loLabel.Font = New Font("Comic Sans MS", 9, FontStyle.Regular)
+        loLabel.BackColor = IIf(lbSolicitante, Color.LightBlue, Color.LightGreen)
+        If lbSolicitante Then
+            loLabel.Left = 2
+        Else
+            'loLabel.Left = panComentarios.Width - (loLabel.Width + 30)
+            loLabel.Left = 100
+        End If
+
+        loLabel.Top = lnTop
+
+        lnTop = lnTop + loLabel.Height + 2
 
     End Sub
 

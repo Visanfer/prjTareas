@@ -44,8 +44,18 @@ Public Module modTareas
 
         goProfile.mrRecuperaDatos()
 
+        Dim loVimailCab As New prjComunicacionInterna.clsVimailCab
+        loVimailCab.mnEmpresa = 1
+        loVimailCab.mrNuevoCodigo()
+        loVimailCab.mnUsuario = lnDe
+        loVimailCab.mdFecha = Now
+        loVimailCab.msHora = Format(Now, "HH:mm:ss")
+        loVimailCab.mrGrabaDatos()
+
         Dim loVimail As New prjComunicacionInterna.clsVimail
         loVimail.mnEmpresa = 1
+        loVimail.mnCodigo = loVimailCab.mnCodigo
+        loVimail.mnLinea = 1
         loVimail.mnDe = lnDe
         loVimail.mnPara = lnPara
         loVimail.msAsunto = "NOTIFICACION TAREA [" & lsTituloTarea & "]"
@@ -54,7 +64,6 @@ Public Module modTareas
         loVimail.mdFechaAviso = Now
         loVimail.msHora = Format(Now, "HH:mm:ss")
         loVimail.msHoraAviso = Format(Now, "HH:mm:ss")
-        loVimail.mnLinea = 1
         loVimail.msIP = goProfile.msIP
         loVimail.mrGrabaDatos()
 
