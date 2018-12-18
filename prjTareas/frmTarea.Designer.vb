@@ -77,7 +77,7 @@ Partial Class frmTarea
         Me.LblHistorial.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LblHistorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblHistorial.Location = New System.Drawing.Point(12, 362)
+        Me.LblHistorial.Location = New System.Drawing.Point(12, 334)
         Me.LblHistorial.Name = "LblHistorial"
         Me.LblHistorial.Size = New System.Drawing.Size(984, 36)
         Me.LblHistorial.TabIndex = 45
@@ -87,7 +87,7 @@ Partial Class frmTarea
         'LblTitulo
         '
         Me.LblTitulo.AutoSize = True
-        Me.LblTitulo.Location = New System.Drawing.Point(12, 191)
+        Me.LblTitulo.Location = New System.Drawing.Point(15, 165)
         Me.LblTitulo.Name = "LblTitulo"
         Me.LblTitulo.Size = New System.Drawing.Size(46, 13)
         Me.LblTitulo.TabIndex = 46
@@ -95,7 +95,7 @@ Partial Class frmTarea
         '
         'txtTitulo
         '
-        Me.txtTitulo.Location = New System.Drawing.Point(64, 187)
+        Me.txtTitulo.Location = New System.Drawing.Point(67, 161)
         Me.txtTitulo.MaxLength = 100
         Me.txtTitulo.Name = "txtTitulo"
         Me.txtTitulo.Size = New System.Drawing.Size(932, 20)
@@ -104,7 +104,7 @@ Partial Class frmTarea
         'LblDescripcion
         '
         Me.LblDescripcion.AutoSize = True
-        Me.LblDescripcion.Location = New System.Drawing.Point(15, 220)
+        Me.LblDescripcion.Location = New System.Drawing.Point(15, 192)
         Me.LblDescripcion.Name = "LblDescripcion"
         Me.LblDescripcion.Size = New System.Drawing.Size(80, 13)
         Me.LblDescripcion.TabIndex = 48
@@ -112,7 +112,7 @@ Partial Class frmTarea
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(15, 236)
+        Me.txtDescripcion.Location = New System.Drawing.Point(15, 208)
         Me.txtDescripcion.MaxLength = 300
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
@@ -149,7 +149,7 @@ Partial Class frmTarea
         'LblFechaFinalm
         '
         Me.LblFechaFinalm.AutoSize = True
-        Me.LblFechaFinalm.Location = New System.Drawing.Point(12, 153)
+        Me.LblFechaFinalm.Location = New System.Drawing.Point(226, 128)
         Me.LblFechaFinalm.Name = "LblFechaFinalm"
         Me.LblFechaFinalm.Size = New System.Drawing.Size(75, 13)
         Me.LblFechaFinalm.TabIndex = 58
@@ -224,7 +224,7 @@ Partial Class frmTarea
         '
         Me.LblFechaFinal.BackColor = System.Drawing.Color.White
         Me.LblFechaFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblFechaFinal.Location = New System.Drawing.Point(120, 149)
+        Me.LblFechaFinal.Location = New System.Drawing.Point(307, 124)
         Me.LblFechaFinal.Name = "LblFechaFinal"
         Me.LblFechaFinal.Size = New System.Drawing.Size(100, 20)
         Me.LblFechaFinal.TabIndex = 69
@@ -275,9 +275,9 @@ Partial Class frmTarea
         Me.panComentarios.AutoScroll = True
         Me.panComentarios.BackColor = System.Drawing.Color.White
         Me.panComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panComentarios.Location = New System.Drawing.Point(12, 391)
+        Me.panComentarios.Location = New System.Drawing.Point(12, 370)
         Me.panComentarios.Name = "panComentarios"
-        Me.panComentarios.Size = New System.Drawing.Size(984, 302)
+        Me.panComentarios.Size = New System.Drawing.Size(984, 323)
         Me.panComentarios.TabIndex = 74
         '
         'frmTarea

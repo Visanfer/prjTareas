@@ -26,7 +26,6 @@ Partial Class frmBusTareas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBusTareas))
         Me.tmrAvisos = New System.Windows.Forms.Timer(Me.components)
         Me.imgIconos16 = New System.Windows.Forms.ImageList(Me.components)
-        Me.lblMensaje = New System.Windows.Forms.Label()
         Me.lblTeclas = New System.Windows.Forms.Label()
         Me.lstEntrada = New System.Windows.Forms.ListView()
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -57,18 +56,6 @@ Partial Class frmBusTareas
         Me.imgIconos16.Images.SetKeyName(3, "")
         Me.imgIconos16.Images.SetKeyName(4, "")
         '
-        'lblMensaje
-        '
-        Me.lblMensaje.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMensaje.Location = New System.Drawing.Point(12, 9)
-        Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(984, 32)
-        Me.lblMensaje.TabIndex = 41
-        Me.lblMensaje.Text = "BUSQUEDA DE TAREAS"
-        Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'lblTeclas
         '
         Me.lblTeclas.BackColor = System.Drawing.Color.Silver
@@ -78,7 +65,8 @@ Partial Class frmBusTareas
         Me.lblTeclas.Name = "lblTeclas"
         Me.lblTeclas.Size = New System.Drawing.Size(982, 28)
         Me.lblTeclas.TabIndex = 40
-        Me.lblTeclas.Text = "F1 - NUEVA TAREA                      ESC - SALIR"
+        Me.lblTeclas.Text = "F1 - NUEVA TAREA                        INTRO - EDITAR TAREA                     " &
+    "     ESC - SALIR"
         Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lstEntrada
@@ -89,10 +77,10 @@ Partial Class frmBusTareas
         Me.lstEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstEntrada.FullRowSelect = True
         Me.lstEntrada.HideSelection = False
-        Me.lstEntrada.Location = New System.Drawing.Point(48, 44)
+        Me.lstEntrada.Location = New System.Drawing.Point(14, 41)
         Me.lstEntrada.MultiSelect = False
         Me.lstEntrada.Name = "lstEntrada"
-        Me.lstEntrada.Size = New System.Drawing.Size(948, 327)
+        Me.lstEntrada.Size = New System.Drawing.Size(982, 307)
         Me.lstEntrada.SmallImageList = Me.imgIconos16
         Me.lstEntrada.TabIndex = 45
         Me.lstEntrada.UseCompatibleStateImageBehavior = False
@@ -117,7 +105,7 @@ Partial Class frmBusTareas
         'ColumnHeader8
         '
         Me.ColumnHeader8.Text = "ESTADO"
-        Me.ColumnHeader8.Width = 150
+        Me.ColumnHeader8.Width = 200
         '
         'LblEncargadas
         '
@@ -125,11 +113,11 @@ Partial Class frmBusTareas
         Me.LblEncargadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblEncargadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblEncargadas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.LblEncargadas.Location = New System.Drawing.Point(14, 377)
+        Me.LblEncargadas.Location = New System.Drawing.Point(14, 348)
         Me.LblEncargadas.Name = "LblEncargadas"
-        Me.LblEncargadas.Size = New System.Drawing.Size(34, 320)
+        Me.LblEncargadas.Size = New System.Drawing.Size(982, 32)
         Me.LblEncargadas.TabIndex = 44
-        Me.LblEncargadas.Text = "ENCARGADAS"
+        Me.LblEncargadas.Text = "TAREAS QUE HE ENCARGADO A OTRAS PERSONAS"
         Me.LblEncargadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblAsignadas
@@ -138,11 +126,11 @@ Partial Class frmBusTareas
         Me.LblAsignadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblAsignadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblAsignadas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.LblAsignadas.Location = New System.Drawing.Point(14, 44)
+        Me.LblAsignadas.Location = New System.Drawing.Point(14, 9)
         Me.LblAsignadas.Name = "LblAsignadas"
-        Me.LblAsignadas.Size = New System.Drawing.Size(34, 327)
+        Me.LblAsignadas.Size = New System.Drawing.Size(982, 32)
         Me.LblAsignadas.TabIndex = 43
-        Me.LblAsignadas.Text = "ASIGNADAS"
+        Me.LblAsignadas.Text = "TAREAS QUE TENGO QUE REALIZAR YO"
         Me.LblAsignadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lstSalida
@@ -153,10 +141,10 @@ Partial Class frmBusTareas
         Me.lstSalida.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSalida.FullRowSelect = True
         Me.lstSalida.HideSelection = False
-        Me.lstSalida.Location = New System.Drawing.Point(48, 377)
+        Me.lstSalida.Location = New System.Drawing.Point(14, 380)
         Me.lstSalida.MultiSelect = False
         Me.lstSalida.Name = "lstSalida"
-        Me.lstSalida.Size = New System.Drawing.Size(948, 320)
+        Me.lstSalida.Size = New System.Drawing.Size(982, 320)
         Me.lstSalida.SmallImageList = Me.imgIconos16
         Me.lstSalida.TabIndex = 42
         Me.lstSalida.UseCompatibleStateImageBehavior = False
@@ -181,7 +169,7 @@ Partial Class frmBusTareas
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "ESTADO"
-        Me.ColumnHeader1.Width = 150
+        Me.ColumnHeader1.Width = 200
         '
         'frmBusTareas
         '
@@ -193,7 +181,6 @@ Partial Class frmBusTareas
         Me.Controls.Add(Me.LblEncargadas)
         Me.Controls.Add(Me.LblAsignadas)
         Me.Controls.Add(Me.lstSalida)
-        Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.lblTeclas)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
@@ -210,7 +197,6 @@ Partial Class frmBusTareas
 
     Friend WithEvents tmrAvisos As Timer
     Friend WithEvents imgIconos16 As ImageList
-    Friend WithEvents lblMensaje As Label
     Friend WithEvents lblTeclas As Label
     Friend WithEvents lstEntrada As ListView
     Friend WithEvents ColumnHeader3 As ColumnHeader
