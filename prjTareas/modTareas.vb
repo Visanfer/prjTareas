@@ -1,7 +1,6 @@
 ﻿Option Explicit On
 
 Imports prjControl
-Imports prjUsuarios
 
 Public Module modTareas
 
