@@ -58,7 +58,7 @@ Public Module modTareas
         loVimail.mnLinea = 1
         loVimail.mnDe = lnDe
         loVimail.mnPara = lnPara
-        loVimail.msAsunto = "NOTIFICACION TAREA [" & lsTituloTarea & "]"
+        loVimail.msAsunto = "TAREA (" & lsTituloTarea & ")"
         loVimail.msCuerpo = lsMensaje
         loVimail.mdFecha = Now
         loVimail.mdFechaAviso = Now

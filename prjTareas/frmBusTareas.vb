@@ -34,6 +34,8 @@ Public Class frmBusTareas
             loItem.SubItems.Add(mfsUsuarioNombre(loTarea.mnId_Solicitante))
             loItem.SubItems.Add(loTarea.msTitulo)
             loItem.SubItems.Add(goBusEstados.mcolEstados(loTarea.mnId_Estado - 1).msNombre)
+            loItem.UseItemStyleForSubItems = False
+            loItem.SubItems(3).BackColor = mfoColor(loTarea.mnId_Estado)
             lstEntrada.Items.Add(loItem)
         Next
 
@@ -47,11 +49,29 @@ Public Class frmBusTareas
             loItem.SubItems.Add(mfsUsuarioNombre(loTarea.mnId_Responsable))
             loItem.SubItems.Add(loTarea.msTitulo)
             loItem.SubItems.Add(goBusEstados.mcolEstados(loTarea.mnId_Estado - 1).msNombre)
+            loItem.UseItemStyleForSubItems = False
+            loItem.SubItems(3).BackColor = mfoColor(loTarea.mnId_Estado)
             lstSalida.Items.Add(loItem)
         Next
 
-
     End Sub
+
+    Private Function mfoColor(ByVal lnId_Estado As Integer) As Color
+
+        Dim loColor As Color
+
+        Select Case lnId_Estado
+            Case 1
+                loColor = Color.LightYellow
+            Case 4
+                loColor = Color.LightGreen
+            Case 5
+                loColor = Color.LightPink
+        End Select
+
+        Return loColor
+
+    End Function
 
     Private Sub frmBusTareas_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
 
