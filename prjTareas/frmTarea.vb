@@ -191,6 +191,7 @@ Public Class frmTarea
 
         End If
 
+
         moTarea.mnId_Solicitante = Val(lblNombreSolicitante.Tag)
         moTarea.mnId_Responsable = Val(lblNombreResponsable.Tag)
         moTarea.mnId_Estado = cboEstado.SelectedIndex + 1
