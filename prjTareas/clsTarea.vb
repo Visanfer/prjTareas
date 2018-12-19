@@ -61,7 +61,7 @@ Public Class clsTarea
 
         If mbEsNuevo Then
             ' poner el resto de campos en el orden correspondiente (HECHO)
-            lsSql = "insert into tareas(fecha_creacion,id_solicitante,id_responsable,titulo,descripcion,id_estado,fecha_inicio,fecha_final,id_tarea_padre) values ('" &
+            lsSql = "insert into tareas(fecha_creacion,id_solicitante,id_responsable,titulo,descripcion,id_estado,fecha_inicio,fecha_final,id_tarea_padre,dias_repeticion) values ('" &
                         Format(mdFecha_Creacion, formatoFechahora) & "','" &
                         mnId_Solicitante & "','" &
                         mnId_Responsable & "','" &

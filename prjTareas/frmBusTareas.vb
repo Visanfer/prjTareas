@@ -117,6 +117,8 @@ Public Class frmBusTareas
         loFormularioTarea.moTarea = loTarea
         loFormularioTarea.mrCargar()
 
+        mrCargaDatos()
+
     End Sub
 
     Private Sub frmBusTareas_Activated(sender As Object, e As EventArgs) Handles Me.Activated
