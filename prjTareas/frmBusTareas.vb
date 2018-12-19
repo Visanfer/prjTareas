@@ -27,6 +27,7 @@ Public Class frmBusTareas
         moBuscaTareas.mrRecuperaTareasEncargadas()
 
         ' ahora cargo los datos en el grid
+        lstEntrada.Items.Clear()
         For Each loTarea As clsTarea In moBuscaTareas.mcolEncargadas
             Dim loItem As New ListViewItem
             loItem.Tag = loTarea.mpsCodigo
@@ -42,6 +43,7 @@ Public Class frmBusTareas
         moBuscaTareas.mnId_Solicitante = goUsuario.mnCodigo
         moBuscaTareas.mrRecuperaTareasSolicitadas()
         ' ahora cargo los datos en el grid
+        lstSalida.Items.Clear()
         For Each loTarea As clsTarea In moBuscaTareas.mcolSolicitadas
             Dim loItem As New ListViewItem
             loItem.Tag = loTarea.mpsCodigo

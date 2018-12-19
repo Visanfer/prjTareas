@@ -8,6 +8,7 @@ Public Class frmTarea
 
     Private moBusTareas As New clsBusTareas
     Private mbPrimeraVez As Boolean = True
+    Private msUsuariosMultiples As String = ""
 
     Public Sub mrCargar()
         Me.ShowDialog()
@@ -39,6 +40,11 @@ Public Class frmTarea
         loBusUsuarios.mbSeleccionaUsuario = True
         loBusUsuarios.mrCargar(loBusUsuario)
         If loBusUsuarios.mnUsuarioSeleccionado > 0 Then
+
+            If loBusUsuarios.msUsuariosSeleccionados.Length > 0 Then
+                msUsuariosMultiples = loBusUsuarios.msUsuariosSeleccionados
+            End If
+
             Dim loResponsable As New clsUsuario
             loResponsable.mnCodigo = loBusUsuarios.mnUsuarioSeleccionado
             loResponsable.mrRecuperaDatos()
@@ -207,6 +213,7 @@ Public Class frmTarea
 
         ' en la primera grabacion, grabo el log de la creacion
         If lbPrimeraGrabacion Then
+
             Dim loTareaLog As New clsTareaLog
             loTareaLog.mnId_Tarea = moTarea.mnId_Tarea
             loTareaLog.mdFecha = Now
@@ -217,6 +224,37 @@ Public Class frmTarea
 
             ' CREO UN VIMAIL AVISANDO SOBRE EL TEMA
             mrMandaVimail(moTarea.mnId_Solicitante, moTarea.mnId_Responsable, moTarea.msTitulo, "TIENES UNA NUEVA TAREA")
+
+            ' cuando es la primera vez admito que se copien las taras para mas usuarios
+            If msUsuariosMultiples.Length > 0 Then
+
+                Dim lnPrimerUsuario As Integer = moTarea.mnId_Responsable
+                Dim lsUsuarios() As String = msUsuariosMultiples.Split(",")
+                For Each lsUsuario As String In lsUsuarios
+
+                    Dim lnUsuarioActual As Integer = Val(lsUsuario)
+                    If lnUsuarioActual > 0 AndAlso lnPrimerUsuario <> lnUsuarioActual Then
+                        moTarea.mnId_Responsable = lnUsuarioActual
+                        moTarea.mnId_Tarea = 0
+                        moTarea.mbEsNuevo = True
+                        moTarea.mrGrabaDatos()
+
+                        loTareaLog.mnId_Tarea = moTarea.mnId_Tarea
+                        loTareaLog.mdFecha = Now
+                        loTareaLog.mnId_Usuario = goUsuario.mnCodigo
+                        loTareaLog.msDescripcion = "CREACION DE LA TAREA"
+                        If moTarea.mnId_Tarea_Padre > 0 Then loTareaLog.msDescripcion = "CREACION DE LA SUBTAREA"
+                        loTareaLog.mnId_Tarealog = 0
+                        loTareaLog.mbEsNuevo = True
+                        loTareaLog.mrGrabaDatos()
+
+                        ' CREO UN VIMAIL AVISANDO SOBRE EL TEMA
+                        mrMandaVimail(moTarea.mnId_Solicitante, moTarea.mnId_Responsable, moTarea.msTitulo, "TIENES UNA NUEVA TAREA")
+
+                    End If
+
+                Next
+            End If
 
         End If
 

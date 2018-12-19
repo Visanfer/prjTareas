@@ -142,7 +142,7 @@ Partial Class frmTarea
         'LblFechaIniciom
         '
         Me.LblFechaIniciom.AutoSize = True
-        Me.LblFechaIniciom.Location = New System.Drawing.Point(12, 128)
+        Me.LblFechaIniciom.Location = New System.Drawing.Point(238, 104)
         Me.LblFechaIniciom.Name = "LblFechaIniciom"
         Me.LblFechaIniciom.Size = New System.Drawing.Size(77, 13)
         Me.LblFechaIniciom.TabIndex = 56
@@ -151,7 +151,7 @@ Partial Class frmTarea
         'LblFechaFinalm
         '
         Me.LblFechaFinalm.AutoSize = True
-        Me.LblFechaFinalm.Location = New System.Drawing.Point(226, 128)
+        Me.LblFechaFinalm.Location = New System.Drawing.Point(428, 104)
         Me.LblFechaFinalm.Name = "LblFechaFinalm"
         Me.LblFechaFinalm.Size = New System.Drawing.Size(75, 13)
         Me.LblFechaFinalm.TabIndex = 58
@@ -160,7 +160,7 @@ Partial Class frmTarea
         'LblEstado
         '
         Me.LblEstado.AutoSize = True
-        Me.LblEstado.Location = New System.Drawing.Point(649, 52)
+        Me.LblEstado.Location = New System.Drawing.Point(698, 52)
         Me.LblEstado.Name = "LblEstado"
         Me.LblEstado.Size = New System.Drawing.Size(51, 13)
         Me.LblEstado.TabIndex = 60
@@ -171,9 +171,9 @@ Partial Class frmTarea
         Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEstado.FormattingEnabled = True
         Me.cboEstado.Items.AddRange(New Object() {"PENDIENTE DE ACEPTAR", "ACEPTADA", "COMENZADA", "TERMINADA", "RECHAZADA"})
-        Me.cboEstado.Location = New System.Drawing.Point(706, 48)
+        Me.cboEstado.Location = New System.Drawing.Point(755, 48)
         Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(290, 21)
+        Me.cboEstado.Size = New System.Drawing.Size(241, 21)
         Me.cboEstado.TabIndex = 61
         '
         'btnF9
@@ -226,21 +226,21 @@ Partial Class frmTarea
         '
         Me.LblFechaFinal.BackColor = System.Drawing.Color.White
         Me.LblFechaFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblFechaFinal.Location = New System.Drawing.Point(307, 124)
+        Me.LblFechaFinal.Location = New System.Drawing.Point(509, 100)
         Me.LblFechaFinal.Name = "LblFechaFinal"
         Me.LblFechaFinal.Size = New System.Drawing.Size(100, 20)
         Me.LblFechaFinal.TabIndex = 69
-        Me.LblFechaFinal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblFechaFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblFechaInicio
         '
         Me.LblFechaInicio.BackColor = System.Drawing.Color.White
         Me.LblFechaInicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblFechaInicio.Location = New System.Drawing.Point(120, 124)
+        Me.LblFechaInicio.Location = New System.Drawing.Point(321, 100)
         Me.LblFechaInicio.Name = "LblFechaInicio"
         Me.LblFechaInicio.Size = New System.Drawing.Size(100, 20)
         Me.LblFechaInicio.TabIndex = 70
-        Me.LblFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblFechaCreacion
         '
@@ -250,7 +250,7 @@ Partial Class frmTarea
         Me.lblFechaCreacion.Name = "lblFechaCreacion"
         Me.lblFechaCreacion.Size = New System.Drawing.Size(100, 20)
         Me.lblFechaCreacion.TabIndex = 71
-        Me.lblFechaCreacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblFechaCreacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblNombreResponsable
         '
@@ -284,7 +284,7 @@ Partial Class frmTarea
         '
         'txtDiasRepeticion
         '
-        Me.txtDiasRepeticion.Location = New System.Drawing.Point(552, 100)
+        Me.txtDiasRepeticion.Location = New System.Drawing.Point(509, 128)
         Me.txtDiasRepeticion.MaxLength = 3
         Me.txtDiasRepeticion.Name = "txtDiasRepeticion"
         Me.txtDiasRepeticion.Size = New System.Drawing.Size(47, 20)
@@ -295,11 +295,11 @@ Partial Class frmTarea
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(226, 104)
+        Me.Label1.Location = New System.Drawing.Point(12, 132)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(320, 13)
+        Me.Label1.Size = New System.Drawing.Size(477, 13)
         Me.Label1.TabIndex = 76
-        Me.Label1.Text = "SI LA TAREA ES REPETITIVA, INDICAR CADA CUANTOS DIAS"
+        Me.Label1.Text = "SI LA TAREA ES REPETITIVA, INDICAR CADA CUANTOS DIAS QUIERES QUE SE RECUERDE"
         '
         'frmTarea
         '
@@ -307,8 +307,8 @@ Partial Class frmTarea
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 730)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtDiasRepeticion)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.panComentarios)
         Me.Controls.Add(Me.lblNombreSolicitante)
         Me.Controls.Add(Me.lblNombreResponsable)
