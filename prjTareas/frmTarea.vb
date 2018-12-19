@@ -126,6 +126,9 @@ Public Class frmTarea
             BtnCrearSubtarea.Visible = False
             cboEstado.Enabled = False
             If Not moTarea.mbEsNuevo Then btnF9.Visible = False
+        Else
+            txtTitulo.ReadOnly = True
+            txtDescripcion.ReadOnly = True
         End If
 
         If moTarea.mbEsNuevo Then

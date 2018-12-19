@@ -91,9 +91,11 @@ Public Class frmBusTareas
         Dim loFormularioTarea As New frmTarea
 
         If lstEntrada.Focused Then
+            If lstEntrada.SelectedItems.Count = 0 Then Exit Sub
             Dim loItem As ListViewItem = lstEntrada.SelectedItems(0)
             loFormularioTarea.moTarea = moBuscaTareas.mcolEncargadas(loItem.Tag)
         Else
+            If lstSalida.SelectedItems.Count = 0 Then Exit Sub
             Dim loItem As ListViewItem = lstSalida.SelectedItems(0)
             loFormularioTarea.moTarea = moBuscaTareas.mcolSolicitadas(loItem.Tag)
         End If
