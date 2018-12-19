@@ -114,10 +114,12 @@ Public Class frmTarea
 
         If moTarea.mbEsNuevo Then
             cboEstado.SelectedIndex = 0
+            txtDiasRepeticion.Text = 0
         Else
             cboEstado.Text = goBusEstados.mcolEstados(moTarea.mnId_Estado - 1).msNombre
             lblNombreResponsable.Tag = moTarea.mnId_Responsable
             lblNombreResponsable.Text = mfsUsuarioNombre(moTarea.mnId_Responsable)
+            txtDiasRepeticion.Text = moTarea.mnDias_Repeticion
         End If
 
         ' CONTROL QUE PUEDE HACER CADA UNO
@@ -127,8 +129,9 @@ Public Class frmTarea
             cboEstado.Enabled = False
             If Not moTarea.mbEsNuevo Then btnF9.Visible = False
         Else
-            txtTitulo.ReadOnly = True
-            txtDescripcion.ReadOnly = True
+            txtTitulo.Enabled = False
+            txtDescripcion.Enabled = False
+            txtDiasRepeticion.Enabled = False
         End If
 
         If moTarea.mbEsNuevo Then

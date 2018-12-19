@@ -14,6 +14,7 @@ Public Class clsTarea
     Public mdFecha_Inicio As Date = CDate("01/01/2000 00:00:00")
     Public mdFecha_Fin As Date = CDate("01/01/2000 00:00:00")
     Public mnId_Tarea_Padre As Integer = 0
+    Public mnDias_Repeticion As Integer = 0
 
     Public mcolLog As Collection
     ' poner el resto de campos en el orden correspondiente (HECHO)
@@ -50,8 +51,7 @@ Public Class clsTarea
         mdFecha_Inicio = CDate(loRecord("fecha_inicio") & "")
         mdFecha_Fin = CDate(loRecord("fecha_final") & "")
         mnId_Tarea_Padre = CInt(loRecord("id_tarea_padre") & "")
-
-        ' poner el resto de campos en el orden correspondiente (HECHO)
+        mnDias_Repeticion = CInt(loRecord("dias_repeticion") & "")
     End Sub
 
     Public Sub mrGrabaDatos()
@@ -70,7 +70,8 @@ Public Class clsTarea
                         mnId_Estado & "','" &
                         Format(mdFecha_Inicio, formatoFechahora) & "','" &
                         Format(mdFecha_Fin, formatoFechahora) & "','" &
-                        mnId_Tarea_Padre & "'); SELECT LAST_INSERT_ID();"
+                        mnId_Tarea_Padre & "','" &
+                        mnDias_Repeticion & "'); SELECT LAST_INSERT_ID();"
             mnId_Tarea = loBaseDatos.mrEjecutaComandoAI(False, lsSql)
         Else
             ' poner el resto de campos en el orden correspondiente (HECHO)
@@ -83,6 +84,7 @@ Public Class clsTarea
                     "', fecha_inicio = '" & Format(mdFecha_Inicio, formatoFechahora) &
                     "', fecha_final = '" & Format(mdFecha_Fin, formatoFechahora) &
                     "', id_tarea_padre = '" & mnId_Tarea_Padre &
+                    "', dias_repeticion = '" & mnDias_Repeticion &
                     "' where id_tarea = " & mnId_Tarea
             loBaseDatos.mrEjecutaComando(False, lsSql)
         End If

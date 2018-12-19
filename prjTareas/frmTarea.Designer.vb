@@ -46,6 +46,8 @@ Partial Class frmTarea
         Me.lblNombreResponsable = New System.Windows.Forms.Label()
         Me.lblNombreSolicitante = New System.Windows.Forms.Label()
         Me.panComentarios = New System.Windows.Forms.Panel()
+        Me.txtDiasRepeticion = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblMensaje
@@ -179,9 +181,9 @@ Partial Class frmTarea
         Me.btnF9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnF9.Location = New System.Drawing.Point(431, 74)
         Me.btnF9.Name = "btnF9"
-        Me.btnF9.Size = New System.Drawing.Size(27, 20)
+        Me.btnF9.Size = New System.Drawing.Size(168, 20)
         Me.btnF9.TabIndex = 62
-        Me.btnF9.Text = "F9"
+        Me.btnF9.Text = "F9 - BUSCAR USUARIO"
         Me.btnF9.UseVisualStyleBackColor = True
         '
         'BtnAsignarOtro
@@ -280,12 +282,33 @@ Partial Class frmTarea
         Me.panComentarios.Size = New System.Drawing.Size(984, 323)
         Me.panComentarios.TabIndex = 74
         '
+        'txtDiasRepeticion
+        '
+        Me.txtDiasRepeticion.Location = New System.Drawing.Point(552, 100)
+        Me.txtDiasRepeticion.MaxLength = 3
+        Me.txtDiasRepeticion.Name = "txtDiasRepeticion"
+        Me.txtDiasRepeticion.Size = New System.Drawing.Size(47, 20)
+        Me.txtDiasRepeticion.TabIndex = 0
+        Me.txtDiasRepeticion.Text = "0"
+        Me.txtDiasRepeticion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(226, 104)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(320, 13)
+        Me.Label1.TabIndex = 76
+        Me.Label1.Text = "SI LA TAREA ES REPETITIVA, INDICAR CADA CUANTOS DIAS"
+        '
         'frmTarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1008, 730)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtDiasRepeticion)
         Me.Controls.Add(Me.panComentarios)
         Me.Controls.Add(Me.lblNombreSolicitante)
         Me.Controls.Add(Me.lblNombreResponsable)
@@ -348,4 +371,6 @@ Partial Class frmTarea
     Friend WithEvents lblNombreResponsable As Label
     Friend WithEvents lblNombreSolicitante As Label
     Friend WithEvents panComentarios As Panel
+    Friend WithEvents txtDiasRepeticion As TextBox
+    Friend WithEvents Label1 As Label
 End Class

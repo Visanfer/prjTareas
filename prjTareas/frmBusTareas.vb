@@ -102,6 +102,8 @@ Public Class frmBusTareas
 
         loFormularioTarea.mrCargar()
 
+        mrCargaDatos()
+
     End Sub
 
     Private Sub mrNuevaTarea()
