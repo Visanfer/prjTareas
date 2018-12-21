@@ -23,9 +23,7 @@ Partial Class frmBusTareas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBusTareas))
         Me.tmrAvisos = New System.Windows.Forms.Timer(Me.components)
-        Me.imgIconos16 = New System.Windows.Forms.ImageList(Me.components)
         Me.lblTeclas = New System.Windows.Forms.Label()
         Me.lstEntrada = New System.Windows.Forms.ListView()
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -45,16 +43,6 @@ Partial Class frmBusTareas
         '
         Me.tmrAvisos.Enabled = True
         Me.tmrAvisos.Interval = 500
-        '
-        'imgIconos16
-        '
-        Me.imgIconos16.ImageStream = CType(resources.GetObject("imgIconos16.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.imgIconos16.TransparentColor = System.Drawing.Color.Transparent
-        Me.imgIconos16.Images.SetKeyName(0, "")
-        Me.imgIconos16.Images.SetKeyName(1, "")
-        Me.imgIconos16.Images.SetKeyName(2, "")
-        Me.imgIconos16.Images.SetKeyName(3, "")
-        Me.imgIconos16.Images.SetKeyName(4, "")
         '
         'lblTeclas
         '
@@ -82,7 +70,6 @@ Partial Class frmBusTareas
         Me.lstEntrada.MultiSelect = False
         Me.lstEntrada.Name = "lstEntrada"
         Me.lstEntrada.Size = New System.Drawing.Size(982, 307)
-        Me.lstEntrada.SmallImageList = Me.imgIconos16
         Me.lstEntrada.TabIndex = 45
         Me.lstEntrada.UseCompatibleStateImageBehavior = False
         Me.lstEntrada.View = System.Windows.Forms.View.Details
@@ -147,7 +134,6 @@ Partial Class frmBusTareas
         Me.lstSalida.MultiSelect = False
         Me.lstSalida.Name = "lstSalida"
         Me.lstSalida.Size = New System.Drawing.Size(982, 320)
-        Me.lstSalida.SmallImageList = Me.imgIconos16
         Me.lstSalida.TabIndex = 42
         Me.lstSalida.UseCompatibleStateImageBehavior = False
         Me.lstSalida.View = System.Windows.Forms.View.Details
@@ -198,7 +184,6 @@ Partial Class frmBusTareas
     End Sub
 
     Friend WithEvents tmrAvisos As Timer
-    Friend WithEvents imgIconos16 As ImageList
     Friend WithEvents lblTeclas As Label
     Friend WithEvents lstEntrada As ListView
     Friend WithEvents ColumnHeader3 As ColumnHeader

@@ -67,9 +67,9 @@ Partial Class frmTarea
         Me.lblTeclas.BackColor = System.Drawing.Color.Silver
         Me.lblTeclas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblTeclas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTeclas.Location = New System.Drawing.Point(12, 696)
+        Me.lblTeclas.Location = New System.Drawing.Point(0, 696)
         Me.lblTeclas.Name = "lblTeclas"
-        Me.lblTeclas.Size = New System.Drawing.Size(984, 28)
+        Me.lblTeclas.Size = New System.Drawing.Size(1008, 37)
         Me.lblTeclas.TabIndex = 43
         Me.lblTeclas.Text = "F5 - GRABAR CAMBIOS                      ESC - SALIR"
         Me.lblTeclas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -81,7 +81,7 @@ Partial Class frmTarea
         Me.LblHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblHistorial.Location = New System.Drawing.Point(12, 334)
         Me.LblHistorial.Name = "LblHistorial"
-        Me.LblHistorial.Size = New System.Drawing.Size(984, 36)
+        Me.LblHistorial.Size = New System.Drawing.Size(987, 36)
         Me.LblHistorial.TabIndex = 45
         Me.LblHistorial.Text = "HISTORIAL"
         Me.LblHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -89,7 +89,7 @@ Partial Class frmTarea
         'LblTitulo
         '
         Me.LblTitulo.AutoSize = True
-        Me.LblTitulo.Location = New System.Drawing.Point(15, 165)
+        Me.LblTitulo.Location = New System.Drawing.Point(12, 165)
         Me.LblTitulo.Name = "LblTitulo"
         Me.LblTitulo.Size = New System.Drawing.Size(46, 13)
         Me.LblTitulo.TabIndex = 46
@@ -106,7 +106,7 @@ Partial Class frmTarea
         'LblDescripcion
         '
         Me.LblDescripcion.AutoSize = True
-        Me.LblDescripcion.Location = New System.Drawing.Point(15, 192)
+        Me.LblDescripcion.Location = New System.Drawing.Point(12, 192)
         Me.LblDescripcion.Name = "LblDescripcion"
         Me.LblDescripcion.Size = New System.Drawing.Size(80, 13)
         Me.LblDescripcion.TabIndex = 48
@@ -114,11 +114,11 @@ Partial Class frmTarea
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(15, 208)
+        Me.txtDescripcion.Location = New System.Drawing.Point(12, 208)
         Me.txtDescripcion.MaxLength = 300
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(984, 123)
+        Me.txtDescripcion.Size = New System.Drawing.Size(987, 123)
         Me.txtDescripcion.TabIndex = 49
         '
         'LblEncargado
@@ -279,7 +279,7 @@ Partial Class frmTarea
         Me.panComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panComentarios.Location = New System.Drawing.Point(12, 370)
         Me.panComentarios.Name = "panComentarios"
-        Me.panComentarios.Size = New System.Drawing.Size(984, 323)
+        Me.panComentarios.Size = New System.Drawing.Size(987, 323)
         Me.panComentarios.TabIndex = 74
         '
         'txtDiasRepeticion
