@@ -11,7 +11,11 @@ Public Class frmTarea
     Private msUsuariosMultiples As String = ""
 
     Public Sub mrCargar()
-        Me.ShowDialog()
+        If Me.MdiParent Is Nothing Then
+            Me.ShowDialog()
+        Else
+            Me.Show()
+        End If
     End Sub
 
     Private Sub frmTarea_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown

@@ -6,7 +6,7 @@ Public Module modTareas
 
     Public goBusEstados As clsBusTareas
 
-    Public goProfile As New clsProfile
+    Public goProfile As New clsProfileLocal
     Public goUsuario As New clsUsuario()
 
     Public Sub Main()
@@ -63,7 +63,7 @@ Public Module modTareas
         loVimail.mdFechaAviso = Now
         loVimail.msHora = Format(Now, "HH:mm:ss")
         loVimail.msHoraAviso = Format(Now, "HH:mm:ss")
-        loVimail.msIP = goProfile.msIP
+        loVimail.msIP = goProfile.mfsIP
         loVimail.mrGrabaDatos()
 
     End Sub

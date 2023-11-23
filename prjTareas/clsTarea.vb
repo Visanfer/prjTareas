@@ -118,8 +118,6 @@ Public Class clsTarea
             mcolLog.Add(loTareaLog, loTareaLog.mpsCodigo)
         Next
 
-
-
     End Sub
 
 End Class

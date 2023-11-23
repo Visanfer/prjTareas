@@ -14,7 +14,11 @@ Public Class frmBusTareas
         modTareas.goProfile.mrRecuperaDatos()
         ' **************************************************
 
-        Me.ShowDialog()
+        If Me.MdiParent Is Nothing Then
+            Me.ShowDialog()
+        Else
+            Me.Show()
+        End If
 
     End Sub
 
